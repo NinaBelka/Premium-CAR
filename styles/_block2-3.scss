@@ -1,14 +1,15 @@
 .block2-3 {
     display: flex;
+    justify-content: center;
+    padding: 45px 0px 63px;
 
     .block2 {
         display: grid;
         grid-template-columns: 785px;
         grid-row-gap: 180px;
-        padding: 45px 0px;
         justify-content: center;
         align-content: center;
-        margin-right: 135px;
+        margin-right: 130px;
 
         %card-text {
             position: absolute;
@@ -36,7 +37,6 @@
         
         %title {
             position: absolute;
-            width: 100%;
             font-weight: bold;
             font-size: 25px;
             line-height: 28px;
@@ -60,11 +60,12 @@
             line-height: 24px;
             left: 30px;
             color: #666666;
-            padding-bottom: 30px;
             top: 145px;
         }
     
         .block2__card {
+            cursor: pointer;
+
             .block2__card-text {
                 @extend %card-text;
             
@@ -79,6 +80,14 @@
                 }
                 .block2__text {
                     @extend %text;
+                }
+            }
+            &:hover {
+                .block2__card-text {
+                    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.5);
+                }
+                .block2__title {
+                    text-decoration-line: underline;
                 }
             }
         }
@@ -103,15 +112,20 @@
         }
     }
     .block3 {
-
-        %title1 {
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 23px;
-            color: #171717;
-            padding: 50px 0px 23px;
-        }
-        
+        display: grid;
+        grid-template-columns: 270px;
+        grid-template-rows: 30px 320px 320px 320px 320px 530px 350px 350px;
+        grid-template-areas: 
+        "block3__title1"
+        "block3__card1"
+        "block3__card2"
+        "block3__card3"
+        "block3__card4"
+        "block3__photo"
+        "block3__buttons"
+        "block3__form";
+        grid-row-gap: 25px;
+    
         %mark {
             position: absolute;
             font-size: 14px;
@@ -135,7 +149,6 @@
             padding: 20px 0px 10px;
             left: 0px;
             bottom: 0px;
-            width: 270px;
         }
 
         %data1 {
@@ -144,15 +157,19 @@
             font-size: 14px;
             line-height: 18px;
             color: #666666;
-            padding-bottom: 40px;
         }
         
         .block3__title1 {
-            @extend %title1;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 23px;
+            color: #171717;
         }
 
-        .block3__card {
+        .block3__card1, .block3__card2,
+        .block3__card3, .block3__card4 {
             position: relative;
+            cursor: pointer;
 
             .block3__mark {
                 top: 20px;
@@ -164,17 +181,17 @@
             .block3__data {
                 @extend %data1;
             }
-        }
-        .block3__title2 {
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 21px;
-            color: #171717;
-            padding: 20px 0px 25px;
+            &:hover {
+                .block3__text {
+                    text-decoration-line: underline;
+                }
+            }
         }
         .block3__photo {
             display: grid;
+            grid-row-gap: 95px;
             grid-template-areas:
+            "title2 title2"
             "image1 image2"
             "image3 image4"
             "image5 image6"
@@ -182,39 +199,58 @@
             grid-column-gap: 10px;
             grid-row-gap: 10px;
             justify-content: left;
-        }
-        .block3__button {
-            grid-area: button;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 18px;
-            color: #FFFFFF;
-            text-align: center;
-            background: #232323;
-            border-radius: 3px;
-            border: none;
-            height: 50px;
-
-            &:hover {
-                background: #5C5C5C;
-            };
-            &:focus {
-                background: #232323;
-                border: 2px dashed rgba(255, 255, 255, 0.5);
-            };
-            &:active { 
-                background: #0E0E0E;
-                border: none;   
+        
+            .block3__title2 {
+                grid-area: title2;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 21px;
+                color: #171717;
+                padding-bottom: 15px;
             }
+        
+            .block3__button {
+                grid-area: button;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 18px;
+                color: #FFFFFF;
+                text-align: center;
+                background: #232323;
+                border-radius: 3px;
+                border: none;
+                height: 50px;
+                cursor: pointer;
 
-            .block3__button-icon {
-                padding-right: 10px;
+                &:hover {
+                    background: #5C5C5C;
+                }
+                &:focus {
+                    background: #232323;
+                    border: 2px dashed rgba(255, 255, 255, 0.5);
+                }
+                &:active { 
+                    background: #0E0E0E;
+                    border: none;   
+                }
+
+                .block3__button-icon {
+                    padding-right: 10px;
+                }
             }
         }
         .block3__buttons {
-            width: 270px;
+            width: 100%;
 
+            .block3__title3 {
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 21px;
+                color: #171717;
+                padding: 35px 0px 26px;
+            }
             .block3__button-tags {
+                cursor: pointer;
                 background: #EBEBEB;
                 border-radius: 3px;
                 border: none;
@@ -224,17 +260,27 @@
                 height: 30px;
                 padding: 7px 10px;
                 margin: 5px;
+            
+                &:hover, &:active {
+                    text-decoration-line: underline;
+                }
             }
         }
         .block3__form {
+
+            .block3__title4 {
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 21px;
+                color: #171717;
+                padding: 35px 0px 10px;
+            }
             .block3__form-text {
                 font-size: 14px;
                 line-height: 24px;
                 color: #666666;
-                width: 270px;
-                padding-bottom: 27px;
+                padding-bottom: 14px;
             }
-        
             .block3__input {
                 background: #FFFFFF;
                 border: 1px solid #E5E5E5;
@@ -243,10 +289,21 @@
                 font-size: 14px;
                 line-height: 18px;
                 color: #AEB3BB;
-                width: 270px;
+                width: 100%;
                 height: 50px;
                 padding: 15px;
                 margin: 10px 0px 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background: #F4F6FA;
+                }
+                &:focus {
+                    color: #000000;
+                    background: #FFFFFF;
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+                    border: none;
+                }
             }
             .block3__form-button {
                 font-weight: bold;
@@ -257,11 +314,185 @@
                 background: #232323;
                 border-radius: 3px;
                 border: none;
-                width: 270px;
                 height: 50px;
+                width: 100%;
                 margin-top: 10px;
-    
+                cursor: pointer;
+
+                &:hover {
+                    background: #5C5C5C;
+                }
+                &:focus {
+                    background: #232323;
+                    border: 2px dashed rgba(255, 255, 255, 0.5);
+                }
+                &:active { 
+                    background: #0E0E0E;
+                    border: none;   
+                }
+            }
+        }
+    }   
+}
+
+@media (max-width: 980px) {
+    .block2-3 {
+        flex-direction: column;
+
+        .block2 {
+            margin-right: 0;
+        }
+        .block3 {
+            justify-content: center;
+            grid-template-columns: repeat(2, 270px);
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "title title"
+            "card1 card2"
+            "card3 card4";
+            grid-column-gap: 60px;
+            grid-row-gap: 40px;
+
+            .block3__title1 {
+                grid-area: title;
+                padding-top: 68px;
+            }
+            .block3__card1 {
+                grid-area: card1;
+            }
+            .block3__card2 {
+                grid-area: card2;
+            }
+            .block3__card3 {
+                grid-area: card3;
+            }
+            .block3__card4 {
+                grid-area: card4;
+            }
+            .block3__photo {
+                .block3__title2 {
+                    padding: 25px 0px 15px;
+                }
+            }
+            .block3__buttons {
+
+                .block3__title3 {
+                    padding: 25px 0px 26px;
+                }
+            }
+            .block3__form {
+                .block3__title4 {
+                    padding: 8px 0px 11px;
+                }
             }
         }
     }
 }
+@media (max-width: 768px) {
+    .block2-3 {
+
+        .block2 {
+            display: grid;
+            grid-template-columns: 370px;
+            grid-row-gap: 280px;
+            padding: 45px 0px;
+            justify-content: center;
+            align-content: center;
+
+            %card-text {
+                position: absolute;
+                width: 350px;
+                height: 324px;
+                background-color: white;
+                box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);            border-radius: 5px;
+                margin: -120px 10px;
+            }
+
+            %mark {
+                position: absolute;
+                font-size: 12px;
+                line-height: 16px;
+                background: #4A90E2;
+                color: white;
+                border-radius: 3px;
+                width: 62px;
+                height: 22px;
+                padding-top: 2.5px;
+                text-align: center;
+                left: 15px;
+                top: 30px;
+            }
+            
+            %title {
+                position: absolute;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 28px;
+                color: #171717;
+                left: 15px;
+                right: 40px;
+            }
+            %date {
+                position: absolute;
+                font-style: italic;
+                font-size: 14px;
+                line-height: 18px;
+                left: 15px;
+                bottom: 165px;
+                color: #666666;
+            }
+            %text {
+                position: absolute;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 24px;
+                left: 15px;
+                right: 40px;
+                color: #666666;
+                top: 170px;
+            }
+        
+            .block2__card {
+                .block2__image {
+                    width: 100%;
+                    height: 404px;
+                }
+            }
+        }
+        .block3 {
+            grid-template-columns: 270px;
+            grid-template-areas: 
+            "title"
+            "card1"
+            "card2"
+            "card3"
+            "card4";
+            grid-column-gap: 65px;
+            grid-row-gap: 30px;
+
+            .block3__title1 {
+                padding: 8px 0px;
+            }
+            .block3__photo {
+                .block3__title2 {
+                    padding: 2px 0px 15px;
+                }
+            }
+            .block3__buttons {
+
+                .block3__title3 {
+                    padding: 18px 0px 26px;
+                }
+            }
+            .block3__form {
+                .block3__title4 {
+                    padding: 18px 0px 11px;
+                }
+            }
+
+        }
+    }
+}
+
+
+
