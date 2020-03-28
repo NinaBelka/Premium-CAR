@@ -4,278 +4,134 @@
   font-family: 'PT Sans', sans-serif;
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 body {
   overflow-x: hidden; }
 
 .header {
-  position: relative;
-  color: #FFFFFF;
-  background-color: #000000;
+  display: flex;
+  width: 100%;
   height: 90px;
-  width: 100%; }
-  .header .header__title1 {
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    line-height: 17px;
-    padding: 37px 6px 37px 100px; }
-  .header .header__title2 {
-    position: absolute;
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    line-height: 17px;
-    background: #4A90E2;
-    border-radius: 3px;
-    width: 39px;
-    height: 23px;
-    padding-top: 2.5px;
-    text-align: center;
-    left: 160px;
-    top: 35px; }
-  .header .header__nav .header__nav-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
+  justify-content: space-between;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 0px 150px; }
+  .header .header__titles {
     display: flex;
-    position: absolute;
-    top: 36px;
-    right: 100px;
-    list-style-type: none; }
-    .header .header__nav .header__nav-list .header__nav-item-link {
+    padding-top: 35px; }
+    .header .header__titles .header__title1 {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      line-height: 17px;
+      margin-right: 10px; }
+    .header .header__titles .header__title2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      line-height: 17px;
+      background: #4A90E2;
+      border-radius: 3px;
+      width: 39px;
+      height: 23px;
+      padding-top: 2.5px;
+      text-align: center; }
+  .header .header__nav-list {
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-top: 35px; }
+    .header .header__nav-list .header__nav-item-link {
       color: white;
       text-decoration: none;
       font-size: 14px;
       line-height: 18px;
-      margin-left: 35px;
       cursor: pointer; }
-      .header .header__nav .header__nav-list .header__nav-item-link:hover {
+      .header .header__nav-list .header__nav-item-link:hover {
         border-bottom: 2px solid #FFFFFF; }
-      .header .header__nav .header__nav-list .header__nav-item-link:focus {
+      .header .header__nav-list .header__nav-item-link:focus {
         width: 42px;
         height: 18px;
         color: #000000;
         background: rgba(255, 255, 255, 0.8); }
-      .header .header__nav .header__nav-list .header__nav-item-link:active {
+      .header .header__nav-list .header__nav-item-link:active {
         font-weight: bold;
         color: white;
         border-bottom: 2px solid #FFFFFF;
         background: #000000; }
+  .header .header__menu-icon {
+    display: none;
+    top: 0px;
+    right: 0px;
+    font-size: 2rem;
+    color: white;
+    line-height: 1;
+    cursor: pointer; }
   .header .header__close-icon {
     display: none;
     text-align: right;
-    padding: 1.5rem;
+    padding: 1rem 3rem;
     font-size: 1.3rem;
     cursor: pointer;
     margin-left: auto; }
-  .header .header__menu-icon {
-    display: none;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    margin: 1rem;
-    font-size: 2rem;
-    line-height: 1;
-    padding: 1rem;
-    cursor: pointer; }
 
+@media (max-width: 1280px) {
+  .header {
+    padding: 0px 100px; }
+    .header .header__nav-list {
+      width: 350px; } }
 @media (max-width: 768px) {
-  .header .header__title1 {
-    padding: 37px 6px 37px 24px; }
-  .header .header__title2 {
-    left: 85px; }
-  .header .header__close-icon {
-    display: block; }
-  .header .header__nav .header__nav-list {
-    right: 0;
-    top: 6px;
-    background-color: #000000;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 220px;
-    -webkit-transform: translateX(320px);
-            transform: translateX(320px);
-    -webkit-transition: -webkit-transform 500ms ease-in-out;
-    transition: -webkit-transform 500ms ease-in-out;
-    transition: transform 500ms ease-in-out;
-    transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
-    will-change: transform;
-    z-index: 2; }
-  .header .header__nav .header__nav-list--active {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
-  .header .header__nav .header__nav-item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
+  .header {
+    padding: 0px 80px; }
+    .header .header__menu-icon {
+      margin: auto 1rem auto auto;
+      display: block; }
+    .header .header__nav-list {
+      position: absolute;
+      right: 0;
+      background-color: #000000;
+      flex-direction: column;
+      width: 220px;
+      display: none;
+      z-index: 2; }
+      .header .header__nav-list .header__close-icon {
+        display: block; }
+    .header .header__nav-list--active {
+      display: block; }
+    .header .header__nav-item {
+      width: 100%;
+      height: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      box-shadow: 0 3px 8px 3px rgba(238, 233, 233, 0.4); }
+      .header .header__nav-item .header__nav-item-link {
+        font-size: 15px;
+        line-height: 40px;
+        margin-left: 20px; } }
+.main {
+  max-width: 1170px;
+  margin: auto; }
+  .main .block1 {
     width: 100%;
-    height: 50px;
-    padding-top: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: 0 3px 8px 3px rgba(238, 233, 233, 0.4);
-            box-shadow: 0 3px 8px 3px rgba(238, 233, 233, 0.4); }
-  .header .header__nav .header__nav-item-link {
-    font-size: 30px;
-    line-height: 40px;
-    margin-left: 10px; }
-  .header .header__nav .header__menu-icon {
-    display: block; } }
-.block1 {
-  width: 100%;
-  display: grid;
-  color: white;
-  grid-template-columns: repeat(3, 370px);
-  grid-template-rows: auto;
-  grid-template-areas: "card1 card2 card3" "card1 card4 card5";
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
-  padding: 30px 0px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center; }
-  .block1 .block1__card1 .block1__mark, .block1 .block1__card2 .block1__mark, .block1 .block1__card3 .block1__mark,
-  .block1 .block1__card4 .block1__mark, .block1 .block1__card5 .block1__mark, .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block2__card .block2__card-text .block1 .block2__mark, .block1 .block2-3 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .block1 .block3__mark, .block1 .block2-3 .block3 .block3__card2 .block3__mark, .block2-3 .block3 .block3__card2 .block1 .block3__mark,
-  .block1 .block2-3 .block3 .block3__card3 .block3__mark,
-  .block2-3 .block3 .block3__card3 .block1 .block3__mark, .block1 .block2-3 .block3 .block3__card4 .block3__mark, .block2-3 .block3 .block3__card4 .block1 .block3__mark {
-    position: absolute;
-    font-size: 14px;
-    line-height: 17px;
-    background: #4A90E2;
-    color: white;
-    border-radius: 3px;
-    width: 62px;
-    height: 22px;
-    padding-top: 2.5px;
-    text-align: center;
-    left: 22px;
-    top: 30px; }
-  .block1 .block1__card1 .block1__card1-text .block1__date, .block1 .block1__card2 .block1__card2-text .block1__date, .block1 .block1__card3 .block1__card2-text .block1__date,
-  .block1 .block1__card4 .block1__card2-text .block1__date, .block1 .block1__card5 .block1__card2-text .block1__date, .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__date, .block2-3 .block2 .block2__card .block2__card-text .block1 .block2__date {
-    position: absolute;
-    font-size: 14px;
-    line-height: 18px;
-    left: 22px;
-    bottom: 90px; }
-  .block1 .block1__card1 .block1__card1-text .block1__text, .block1 .block1__card2 .block1__card2-text .block1__text, .block1 .block1__card3 .block1__card2-text .block1__text,
-  .block1 .block1__card4 .block1__card2-text .block1__text, .block1 .block1__card5 .block1__card2-text .block1__text, .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__text, .block2-3 .block2 .block2__card .block2__card-text .block1 .block2__text {
-    position: absolute;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 30px;
-    left: 22px;
-    bottom: 22px; }
-  .block1 .block1__card1 {
-    grid-area: card1;
-    position: relative;
-    cursor: pointer; }
-    .block1 .block1__card1 .block1__card1-text {
-      position: absolute;
-      height: 560px;
-      width: 100%;
-      border-radius: 5px;
-      top: 0px;
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 7.5e-05)), color-stop(82.82%, rgba(0, 0, 0, 0.75)));
-      background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%); }
-      .block1 .block1__card1 .block1__card1-text .block1__date {
-        bottom: 100px; }
-      .block1 .block1__card1 .block1__card1-text .block1__text {
-        font-size: 26px;
-        line-height: 36px; }
-    .block1 .block1__card1:hover .block1__card1-text {
-      position: absolute;
-      height: 560px;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 5px;
-      top: 0px;
-      -webkit-transition-duration: 0.3s;
-              transition-duration: 0.3s; }
-    .block1 .block1__card1:hover .block1__text {
-      -webkit-text-decoration-line: underline;
-              text-decoration-line: underline; }
-  .block1 .block1__card2 {
-    grid-area: card2; }
-  .block1 .block1__card3 {
-    grid-area: card3; }
-  .block1 .block1__card4 {
-    grid-area: card4; }
-  .block1 .block1__card5 {
-    grid-area: card5; }
-  .block1 .block1__card2, .block1 .block1__card3,
-  .block1 .block1__card4, .block1 .block1__card5 {
-    position: relative;
-    cursor: pointer; }
-    .block1 .block1__card2 .block1__card2-text, .block1 .block1__card3 .block1__card2-text,
-    .block1 .block1__card4 .block1__card2-text, .block1 .block1__card5 .block1__card2-text {
-      position: absolute;
-      height: 265px;
-      width: 100%;
-      border-radius: 5px;
-      top: 0px;
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 7.5e-05)), color-stop(82.82%, rgba(0, 0, 0, 0.75)));
-      background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%); }
-    .block1 .block1__card2:hover .block1__card2-text, .block1 .block1__card3:hover .block1__card2-text,
-    .block1 .block1__card4:hover .block1__card2-text, .block1 .block1__card5:hover .block1__card2-text {
-      position: absolute;
-      height: 265px;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 5px;
-      top: 0px;
-      -webkit-transition-duration: 0.3s;
-              transition-duration: 0.3s; }
-    .block1 .block1__card2:hover .block1__text, .block1 .block1__card3:hover .block1__text,
-    .block1 .block1__card4:hover .block1__text, .block1 .block1__card5:hover .block1__text {
-      -webkit-text-decoration-line: underline;
-              text-decoration-line: underline; }
-
-@media (max-width: 980px) {
-  .block1 {
-    grid-template-columns: repeat(2, 370px);
-    grid-template-areas: "card1 card2" "card1 card4" "card3 card5";
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; } }
-@media (max-width: 768px) {
-  .block1 {
-    grid-template-columns: repeat(1, 370px);
-    grid-template-areas: "card1" "card1" "card2" "card4" "card3" "card5"; } }
-.block2-3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 45px 0px 63px; }
-  .block2-3 .block2 {
     display: grid;
-    grid-template-columns: 785px;
-    grid-row-gap: 180px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    margin-right: 130px; }
-    .block2-3 .block2 .block2__card .block2__card-text {
-      position: absolute;
-      width: 725px;
-      height: 250px;
-      background-color: white;
-      -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-              box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-      margin: -120px 20px; }
-    .block2-3 .block2 .block1 .block1__card1 .block1__mark, .block1 .block1__card1 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block1 .block1__card2 .block1__mark, .block1 .block1__card2 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block1 .block1__card3 .block1__mark, .block1 .block1__card3 .block2-3 .block2 .block1__mark,
-    .block2-3 .block2 .block1 .block1__card4 .block1__mark,
-    .block1 .block1__card4 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block1 .block1__card5 .block1__mark, .block1 .block1__card5 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .block2 .block3__mark, .block2-3 .block2 .block3 .block3__card2 .block3__mark, .block2-3 .block3 .block3__card2 .block2 .block3__mark,
-    .block2-3 .block2 .block3 .block3__card3 .block3__mark,
-    .block2-3 .block3 .block3__card3 .block2 .block3__mark, .block2-3 .block2 .block3 .block3__card4 .block3__mark, .block2-3 .block3 .block3__card4 .block2 .block3__mark {
+    color: white;
+    grid-template-columns: repeat(3, 370px);
+    grid-template-rows: auto;
+    grid-template-areas: "card1 card2 card3" "card1 card4 card5";
+    grid-column-gap: 10px;
+    grid-row-gap: 30px;
+    padding: 30px 0px;
+    justify-content: center;
+    align-content: center; }
+    .main .block1 .block1__card1 .block1__mark, .main .block1 .block1__card2 .block1__mark,
+    .main .block1 .block1__card3 .block1__mark,
+    .main .block1 .block1__card4 .block1__mark,
+    .main .block1 .block1__card5 .block1__mark, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .main .block2-3 .block2 .block2__card .block2__card-text .block1 .block2__mark, .main .block1 .block2-3 .block3 .block3__card1 .block3__mark, .main .block2-3 .block3 .block3__card1 .block1 .block3__mark,
+    .main .block1 .block2-3 .block3 .block3__card2 .block3__mark,
+    .main .block2-3 .block3 .block3__card2 .block1 .block3__mark,
+    .main .block1 .block2-3 .block3 .block3__card3 .block3__mark,
+    .main .block2-3 .block3 .block3__card3 .block1 .block3__mark,
+    .main .block1 .block2-3 .block3 .block3__card4 .block3__mark,
+    .main .block2-3 .block3 .block3__card4 .block1 .block3__mark {
       position: absolute;
       font-size: 14px;
       line-height: 17px;
@@ -286,130 +142,370 @@ body {
       height: 22px;
       padding-top: 2.5px;
       text-align: center;
-      left: 30px;
+      left: 22px;
       top: 30px; }
-    .block2-3 .block2 .block2__card .block2__card-text .block2__title {
+    .main .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block1__date,
+    .main .block1 .block1__card3 .block1__card2-text .block1__date,
+    .main .block1 .block1__card4 .block1__card2-text .block1__date,
+    .main .block1 .block1__card5 .block1__card2-text .block1__date, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__date, .main .block2-3 .block2 .block2__card .block2__card-text .block1 .block2__date {
       position: absolute;
-      font-weight: bold;
-      font-size: 25px;
-      line-height: 28px;
-      color: #171717;
-      left: 30px;
-      top: 72px; }
-    .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__date, .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__date, .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__date, .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
-    .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__date,
-    .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__date, .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block2__card .block2__card-text .block2__date {
-      position: absolute;
-      font-style: italic;
       font-size: 14px;
       line-height: 18px;
-      left: 30px;
-      bottom: 115px;
-      color: #666666; }
-    .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__text, .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__text, .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__text, .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
-    .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__text,
-    .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__text, .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block2__card .block2__card-text .block2__text {
+      left: 22px;
+      bottom: 90px; }
+    .main .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block1__text,
+    .main .block1 .block1__card3 .block1__card2-text .block1__text,
+    .main .block1 .block1__card4 .block1__card2-text .block1__text,
+    .main .block1 .block1__card5 .block1__card2-text .block1__text, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__text, .main .block2-3 .block2 .block2__card .block2__card-text .block1 .block2__text {
       position: absolute;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 24px;
-      left: 30px;
-      color: #666666;
-      top: 145px; }
-    .block2-3 .block2 .block2__card {
-      cursor: pointer; }
-      .block2-3 .block2 .block2__card:hover .block2__card-text {
-        -webkit-box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.5);
-                box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.5); }
-      .block2-3 .block2 .block2__card:hover .block2__title {
-        -webkit-text-decoration-line: underline;
-                text-decoration-line: underline; }
-  .block2-3 .block2__buttons {
-    text-align: center; }
-    .block2-3 .block2__buttons .block2__button {
-      background: #FFFFFF;
-      border: 1px solid #E5E5E5;
-      border-radius: 3px;
-      width: 40px;
-      height: 40px; }
-      .block2-3 .block2__buttons .block2__button:hover {
-        background: #EFEFEF;
-        border: 1px solid #E5E5E5; }
-      .block2-3 .block2__buttons .block2__button:active {
-        background: #000000;
-        color: white; }
-  .block2-3 .block3 {
-    display: grid;
-    grid-template-columns: 270px;
-    grid-template-rows: 30px 320px 320px 320px 320px 530px 350px 350px;
-    grid-template-areas: "block3__title1" "block3__card1" "block3__card2" "block3__card3" "block3__card4" "block3__photo" "block3__buttons" "block3__form";
-    grid-row-gap: 25px; }
-    .block2-3 .block3 .block1 .block1__card1 .block1__mark, .block1 .block1__card1 .block2-3 .block3 .block1__mark, .block2-3 .block3 .block1 .block1__card2 .block1__mark, .block1 .block1__card2 .block2-3 .block3 .block1__mark, .block2-3 .block3 .block1 .block1__card3 .block1__mark, .block1 .block1__card3 .block2-3 .block3 .block1__mark,
-    .block2-3 .block3 .block1 .block1__card4 .block1__mark,
-    .block1 .block1__card4 .block2-3 .block3 .block1__mark, .block2-3 .block3 .block1 .block1__card5 .block1__mark, .block1 .block1__card5 .block2-3 .block3 .block1__mark, .block2-3 .block3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block2__card .block2__card-text .block3 .block2__mark, .block2-3 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card2 .block3__mark,
-    .block2-3 .block3 .block3__card3 .block3__mark, .block2-3 .block3 .block3__card4 .block3__mark {
-      position: absolute;
-      font-size: 14px;
-      line-height: 17px;
-      background: #4A90E2;
-      color: white;
-      border-radius: 3px;
-      width: 62px;
-      height: 22px;
-      padding-top: 2.5px;
-      text-align: center;
-      left: 30px;
-      top: 30px; }
-    .block2-3 .block3 .block3__card1 .block3__text, .block2-3 .block3 .block3__card2 .block3__text,
-    .block2-3 .block3 .block3__card3 .block3__text, .block2-3 .block3 .block3__card4 .block3__text {
       font-weight: bold;
       font-size: 20px;
-      line-height: 28px;
-      color: #171717;
-      padding: 20px 0px 10px;
-      left: 0px;
-      bottom: 0px; }
-    .block2-3 .block3 .block3__card1 .block3__data, .block2-3 .block3 .block3__card2 .block3__data,
-    .block2-3 .block3 .block3__card3 .block3__data, .block2-3 .block3 .block3__card4 .block3__data {
-      font-style: italic;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-      color: #666666; }
-    .block2-3 .block3 .block3__title1 {
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 23px;
-      color: #171717; }
-    .block2-3 .block3 .block3__card1, .block2-3 .block3 .block3__card2,
-    .block2-3 .block3 .block3__card3, .block2-3 .block3 .block3__card4 {
+      line-height: 30px;
+      left: 22px;
+      bottom: 22px; }
+    .main .block1 .block1__card1 {
+      grid-area: card1;
       position: relative;
       cursor: pointer; }
-      .block2-3 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card2 .block3__mark,
-      .block2-3 .block3 .block3__card3 .block3__mark, .block2-3 .block3 .block3__card4 .block3__mark {
-        top: 20px; }
-      .block2-3 .block3 .block3__card1:hover .block3__text, .block2-3 .block3 .block3__card2:hover .block3__text,
-      .block2-3 .block3 .block3__card3:hover .block3__text, .block2-3 .block3 .block3__card4:hover .block3__text {
-        -webkit-text-decoration-line: underline;
-                text-decoration-line: underline; }
-    .block2-3 .block3 .block3__photo {
+      .main .block1 .block1__card1 .block1__card1-text {
+        position: absolute;
+        height: 560px;
+        width: 100%;
+        border-radius: 5px;
+        top: 0px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%); }
+        .main .block1 .block1__card1 .block1__card1-text .block1__date {
+          bottom: 100px; }
+        .main .block1 .block1__card1 .block1__card1-text .block1__text {
+          font-size: 26px;
+          line-height: 36px; }
+      .main .block1 .block1__card1:hover .block1__card1-text {
+        position: absolute;
+        height: 560px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+        top: 0px;
+        transition-duration: 0.3s; }
+      .main .block1 .block1__card1:hover .block1__text {
+        text-decoration-line: underline; }
+    .main .block1 .block1__card2 {
+      grid-area: card2; }
+    .main .block1 .block1__card3 {
+      grid-area: card3; }
+    .main .block1 .block1__card4 {
+      grid-area: card4; }
+    .main .block1 .block1__card5 {
+      grid-area: card5; }
+    .main .block1 .block1__card2,
+    .main .block1 .block1__card3,
+    .main .block1 .block1__card4,
+    .main .block1 .block1__card5 {
+      position: relative;
+      cursor: pointer; }
+      .main .block1 .block1__card2 .block1__card2-text,
+      .main .block1 .block1__card3 .block1__card2-text,
+      .main .block1 .block1__card4 .block1__card2-text,
+      .main .block1 .block1__card5 .block1__card2-text {
+        position: absolute;
+        height: 265px;
+        width: 100%;
+        border-radius: 5px;
+        top: 0px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%); }
+      .main .block1 .block1__card2:hover .block1__card2-text,
+      .main .block1 .block1__card3:hover .block1__card2-text,
+      .main .block1 .block1__card4:hover .block1__card2-text,
+      .main .block1 .block1__card5:hover .block1__card2-text {
+        position: absolute;
+        height: 265px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+        top: 0px;
+        transition-duration: 0.3s; }
+      .main .block1 .block1__card2:hover .block1__text,
+      .main .block1 .block1__card3:hover .block1__text,
+      .main .block1 .block1__card4:hover .block1__text,
+      .main .block1 .block1__card5:hover .block1__text {
+        text-decoration-line: underline; }
+
+@media (max-width: 1280px) {
+  .main {
+    max-width: 760px;
+    margin: auto; }
+    .main .block1 {
+      grid-template-columns: repeat(2, 370px);
+      grid-template-areas: "card1 card2" "card1 card4" "card3 card5";
+      justify-content: center; } }
+@media (max-width: 768px) {
+  .main {
+    max-width: 370px;
+    margin: auto; }
+    .main .block1 {
+      grid-template-columns: repeat(1, 370px);
+      grid-template-areas: "card1" "card1" "card2" "card4" "card3" "card5"; } }
+.main {
+  max-width: 1170px;
+  margin: auto; }
+  .main .block2-3 {
+    display: flex;
+    justify-content: center;
+    padding: 45px 0px 63px; }
+    .main .block2-3 .block2 {
       display: grid;
-      grid-row-gap: 95px;
-      grid-template-areas: "title2 title2" "image1 image2" "image3 image4" "image5 image6" "button button";
-      grid-column-gap: 10px;
-      grid-row-gap: 10px;
-      -webkit-box-pack: left;
-          -ms-flex-pack: left;
-              justify-content: left; }
-      .block2-3 .block3 .block3__photo .block3__title2 {
-        grid-area: title2;
+      grid-template-columns: 785px;
+      grid-row-gap: 180px;
+      justify-content: center;
+      align-content: center;
+      margin-right: 130px; }
+      .main .block2-3 .block2 .block2__card .block2__card-text {
+        position: absolute;
+        width: 725px;
+        height: 250px;
+        background-color: white;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin: -120px 20px; }
+      .main .block2-3 .block2 .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block2 .block1__mark, .main .block2-3 .block2 .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block2 .block1__mark,
+      .main .block2-3 .block2 .block1 .block1__card3 .block1__mark,
+      .main .block1 .block1__card3 .block2-3 .block2 .block1__mark,
+      .main .block2-3 .block2 .block1 .block1__card4 .block1__mark,
+      .main .block1 .block1__card4 .block2-3 .block2 .block1__mark,
+      .main .block2-3 .block2 .block1 .block1__card5 .block1__mark,
+      .main .block1 .block1__card5 .block2-3 .block2 .block1__mark, .main .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .main .block2-3 .block2 .block3 .block3__card1 .block3__mark, .main .block2-3 .block3 .block3__card1 .block2 .block3__mark,
+      .main .block2-3 .block2 .block3 .block3__card2 .block3__mark,
+      .main .block2-3 .block3 .block3__card2 .block2 .block3__mark,
+      .main .block2-3 .block2 .block3 .block3__card3 .block3__mark,
+      .main .block2-3 .block3 .block3__card3 .block2 .block3__mark,
+      .main .block2-3 .block2 .block3 .block3__card4 .block3__mark,
+      .main .block2-3 .block3 .block3__card4 .block2 .block3__mark {
+        position: absolute;
+        font-size: 14px;
+        line-height: 17px;
+        background: #4A90E2;
+        color: white;
+        border-radius: 3px;
+        width: 62px;
+        height: 22px;
+        padding-top: 2.5px;
+        text-align: center;
+        left: 30px;
+        top: 30px; }
+      .main .block2-3 .block2 .block2__card .block2__card-text .block2__title {
+        position: absolute;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 28px;
+        color: #171717;
+        left: 30px;
+        top: 72px; }
+      .main .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .main .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date,
+      .main .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__date,
+      .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
+      .main .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__date,
+      .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date,
+      .main .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__date,
+      .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .main .block2-3 .block2 .block2__card .block2__card-text .block2__date {
+        position: absolute;
+        font-style: italic;
+        font-size: 14px;
+        line-height: 18px;
+        left: 30px;
+        bottom: 115px;
+        color: #666666; }
+      .main .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .main .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text,
+      .main .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__text,
+      .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
+      .main .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__text,
+      .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text,
+      .main .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__text,
+      .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .main .block2-3 .block2 .block2__card .block2__card-text .block2__text {
+        position: absolute;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 24px;
+        left: 30px;
+        color: #666666;
+        top: 145px; }
+      .main .block2-3 .block2 .block2__card {
+        cursor: pointer; }
+        .main .block2-3 .block2 .block2__card:hover .block2__card-text {
+          box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.5); }
+        .main .block2-3 .block2 .block2__card:hover .block2__title {
+          text-decoration-line: underline; }
+    .main .block2-3 .block2__buttons {
+      text-align: center; }
+      .main .block2-3 .block2__buttons .block2__button {
+        cursor: pointer;
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        border-radius: 3px;
+        width: 40px;
+        height: 40px; }
+        .main .block2-3 .block2__buttons .block2__button:hover {
+          background: #EFEFEF;
+          border: 1px solid #E5E5E5; }
+        .main .block2-3 .block2__buttons .block2__button:active {
+          background: #000000;
+          color: white; }
+    .main .block2-3 .block3 {
+      display: grid;
+      grid-template-columns: 270px;
+      grid-template-rows: 30px 320px 320px 320px 320px 530px 350px 350px;
+      grid-template-areas: "block3__title1" "block3__card1" "block3__card2" "block3__card3" "block3__card4" "block3__photo" "block3__buttons" "block3__form";
+      grid-row-gap: 25px; }
+      .main .block2-3 .block3 .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block3 .block1__mark, .main .block2-3 .block3 .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block3 .block1__mark,
+      .main .block2-3 .block3 .block1 .block1__card3 .block1__mark,
+      .main .block1 .block1__card3 .block2-3 .block3 .block1__mark,
+      .main .block2-3 .block3 .block1 .block1__card4 .block1__mark,
+      .main .block1 .block1__card4 .block2-3 .block3 .block1__mark,
+      .main .block2-3 .block3 .block1 .block1__card5 .block1__mark,
+      .main .block1 .block1__card5 .block2-3 .block3 .block1__mark, .main .block2-3 .block3 .block2 .block2__card .block2__card-text .block2__mark, .main .block2-3 .block2 .block2__card .block2__card-text .block3 .block2__mark, .main .block2-3 .block3 .block3__card1 .block3__mark,
+      .main .block2-3 .block3 .block3__card2 .block3__mark,
+      .main .block2-3 .block3 .block3__card3 .block3__mark,
+      .main .block2-3 .block3 .block3__card4 .block3__mark {
+        position: absolute;
+        font-size: 14px;
+        line-height: 17px;
+        background: #4A90E2;
+        color: white;
+        border-radius: 3px;
+        width: 62px;
+        height: 22px;
+        padding-top: 2.5px;
+        text-align: center;
+        left: 30px;
+        top: 30px; }
+      .main .block2-3 .block3 .block3__card1 .block3__text,
+      .main .block2-3 .block3 .block3__card2 .block3__text,
+      .main .block2-3 .block3 .block3__card3 .block3__text,
+      .main .block2-3 .block3 .block3__card4 .block3__text {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 28px;
+        color: #171717;
+        padding: 20px 0px 10px;
+        left: 0px;
+        bottom: 0px; }
+      .main .block2-3 .block3 .block3__card1 .block3__data,
+      .main .block2-3 .block3 .block3__card2 .block3__data,
+      .main .block2-3 .block3 .block3__card3 .block3__data,
+      .main .block2-3 .block3 .block3__card4 .block3__data {
+        font-style: italic;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: #666666; }
+      .main .block2-3 .block3 .block3__title1 {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 23px;
+        color: #171717; }
+      .main .block2-3 .block3 .block3__card1,
+      .main .block2-3 .block3 .block3__card2,
+      .main .block2-3 .block3 .block3__card3,
+      .main .block2-3 .block3 .block3__card4 {
+        position: relative;
+        cursor: pointer; }
+        .main .block2-3 .block3 .block3__card1 .block3__mark,
+        .main .block2-3 .block3 .block3__card2 .block3__mark,
+        .main .block2-3 .block3 .block3__card3 .block3__mark,
+        .main .block2-3 .block3 .block3__card4 .block3__mark {
+          top: 20px; }
+        .main .block2-3 .block3 .block3__card1:hover .block3__text,
+        .main .block2-3 .block3 .block3__card2:hover .block3__text,
+        .main .block2-3 .block3 .block3__card3:hover .block3__text,
+        .main .block2-3 .block3 .block3__card4:hover .block3__text {
+          text-decoration-line: underline; }
+      .main .block2-3 .block3 .block3__photo {
+        display: grid;
+        grid-row-gap: 95px;
+        grid-template-areas: "title2 title2" "image1 image2" "image3 image4" "image5 image6" "button button";
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        justify-content: left; }
+        .main .block2-3 .block3 .block3__photo .block3__title2 {
+          grid-area: title2;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 21px;
+          color: #171717;
+          padding-bottom: 15px; }
+        .main .block2-3 .block3 .block3__photo .block3__button {
+          grid-area: button;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 18px;
+          color: #FFFFFF;
+          text-align: center;
+          background: #232323;
+          border-radius: 3px;
+          border: none;
+          height: 50px;
+          cursor: pointer; }
+          .main .block2-3 .block3 .block3__photo .block3__button:hover {
+            background: #5C5C5C; }
+          .main .block2-3 .block3 .block3__photo .block3__button:focus {
+            background: #232323;
+            border: 2px dashed rgba(255, 255, 255, 0.5); }
+          .main .block2-3 .block3 .block3__photo .block3__button:active {
+            background: #0E0E0E;
+            border: none; }
+          .main .block2-3 .block3 .block3__photo .block3__button .block3__button-icon {
+            padding-right: 10px; }
+      .main .block2-3 .block3 .block3__buttons {
+        width: 100%; }
+        .main .block2-3 .block3 .block3__buttons .block3__title3 {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 21px;
+          color: #171717;
+          padding: 35px 0px 26px; }
+        .main .block2-3 .block3 .block3__buttons .block3__button-tags {
+          background: #EBEBEB;
+          border-radius: 3px;
+          border: none;
+          font-size: 14px;
+          line-height: 18px;
+          color: #171717;
+          height: 30px;
+          padding: 7px 10px;
+          margin: 5px; }
+          .main .block2-3 .block3 .block3__buttons .block3__button-tags:hover, .main .block2-3 .block3 .block3__buttons .block3__button-tags:active {
+            text-decoration-line: underline; }
+      .main .block2-3 .block3 .block3__form .block3__title4 {
         font-weight: bold;
         font-size: 18px;
         line-height: 21px;
         color: #171717;
-        padding-bottom: 15px; }
-      .block2-3 .block3 .block3__photo .block3__button {
-        grid-area: button;
+        padding: 35px 0px 10px; }
+      .main .block2-3 .block3 .block3__form .block3__form-text {
+        font-size: 14px;
+        line-height: 24px;
+        color: #666666;
+        padding-bottom: 14px; }
+      .main .block2-3 .block3 .block3__form .block3__input {
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        box-sizing: border-box;
+        border-radius: 3px;
+        font-size: 14px;
+        line-height: 18px;
+        color: #AEB3BB;
+        width: 100%;
+        height: 50px;
+        padding: 15px;
+        margin: 10px 0px 5px;
+        cursor: pointer; }
+        .main .block2-3 .block3 .block3__form .block3__input:hover {
+          background: #F4F6FA; }
+        .main .block2-3 .block3 .block3__form .block3__input:focus {
+          color: #000000;
+          background: #FFFFFF;
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+          border: none; }
+      .main .block2-3 .block3 .block3__form .block3__form-button {
         font-weight: bold;
         font-size: 14px;
         line-height: 18px;
@@ -419,214 +515,148 @@ body {
         border-radius: 3px;
         border: none;
         height: 50px;
+        width: 100%;
+        margin-top: 10px;
         cursor: pointer; }
-        .block2-3 .block3 .block3__photo .block3__button:hover {
+        .main .block2-3 .block3 .block3__form .block3__form-button:hover {
           background: #5C5C5C; }
-        .block2-3 .block3 .block3__photo .block3__button:focus {
+        .main .block2-3 .block3 .block3__form .block3__form-button:focus {
           background: #232323;
           border: 2px dashed rgba(255, 255, 255, 0.5); }
-        .block2-3 .block3 .block3__photo .block3__button:active {
+        .main .block2-3 .block3 .block3__form .block3__form-button:active {
           background: #0E0E0E;
           border: none; }
-        .block2-3 .block3 .block3__photo .block3__button .block3__button-icon {
-          padding-right: 10px; }
-    .block2-3 .block3 .block3__buttons {
-      width: 100%; }
-      .block2-3 .block3 .block3__buttons .block3__title3 {
+
+@media (max-width: 1280px) {
+  .main {
+    max-width: 760px;
+    margin: auto; }
+    .main .block2-3 {
+      flex-direction: column; }
+      .main .block2-3 .block2 {
+        margin-right: 0; }
+      .main .block2-3 .block3 {
+        justify-content: center;
+        grid-template-columns: repeat(2, 270px);
+        grid-template-rows: auto;
+        grid-template-areas: "title title" "card1 card2" "card3 card4";
+        grid-column-gap: 60px;
+        grid-row-gap: 40px; }
+        .main .block2-3 .block3 .block3__title1 {
+          grid-area: title;
+          padding-top: 68px; }
+        .main .block2-3 .block3 .block3__card1 {
+          grid-area: card1; }
+        .main .block2-3 .block3 .block3__card2 {
+          grid-area: card2; }
+        .main .block2-3 .block3 .block3__card3 {
+          grid-area: card3; }
+        .main .block2-3 .block3 .block3__card4 {
+          grid-area: card4; }
+        .main .block2-3 .block3 .block3__photo .block3__title2 {
+          padding: 25px 0px 15px; }
+        .main .block2-3 .block3 .block3__buttons .block3__title3 {
+          padding: 25px 0px 26px; }
+        .main .block2-3 .block3 .block3__form .block3__title4 {
+          padding: 8px 0px 11px; } }
+@media (max-width: 768px) {
+  .main {
+    max-width: 766px;
+    margin: auto; }
+    .main .block2-3 .block2 {
+      display: grid;
+      grid-template-columns: 370px;
+      grid-row-gap: 280px;
+      padding: 45px 0px;
+      justify-content: center;
+      align-content: center; }
+      .main .block2-3 .block2 .block2__card .block2__card-text {
+        position: absolute;
+        width: 350px;
+        height: 324px;
+        background-color: white;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin: -120px 10px; }
+      .main .block2-3 .block2 .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block2 .block1__mark, .main .block2-3 .block2 .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block2 .block1__mark,
+      .main .block2-3 .block2 .block1 .block1__card3 .block1__mark,
+      .main .block1 .block1__card3 .block2-3 .block2 .block1__mark,
+      .main .block2-3 .block2 .block1 .block1__card4 .block1__mark,
+      .main .block1 .block1__card4 .block2-3 .block2 .block1__mark,
+      .main .block2-3 .block2 .block1 .block1__card5 .block1__mark,
+      .main .block1 .block1__card5 .block2-3 .block2 .block1__mark, .main .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .main .block2-3 .block2 .block3 .block3__card1 .block3__mark, .main .block2-3 .block3 .block3__card1 .block2 .block3__mark,
+      .main .block2-3 .block2 .block3 .block3__card2 .block3__mark,
+      .main .block2-3 .block3 .block3__card2 .block2 .block3__mark,
+      .main .block2-3 .block2 .block3 .block3__card3 .block3__mark,
+      .main .block2-3 .block3 .block3__card3 .block2 .block3__mark,
+      .main .block2-3 .block2 .block3 .block3__card4 .block3__mark,
+      .main .block2-3 .block3 .block3__card4 .block2 .block3__mark {
+        position: absolute;
+        font-size: 12px;
+        line-height: 16px;
+        background: #4A90E2;
+        color: white;
+        border-radius: 3px;
+        width: 62px;
+        height: 22px;
+        padding-top: 2.5px;
+        text-align: center;
+        left: 15px;
+        top: 30px; }
+      .main .block2-3 .block2 .block2__card .block2__card-text .block2__title {
+        position: absolute;
         font-weight: bold;
         font-size: 18px;
-        line-height: 21px;
+        line-height: 28px;
         color: #171717;
-        padding: 35px 0px 26px; }
-      .block2-3 .block3 .block3__buttons .block3__button-tags {
-        cursor: pointer;
-        background: #EBEBEB;
-        border-radius: 3px;
-        border: none;
+        left: 15px;
+        right: 40px; }
+      .main .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .main .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date,
+      .main .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__date,
+      .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
+      .main .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__date,
+      .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date,
+      .main .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__date,
+      .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .main .block2-3 .block2 .block2__card .block2__card-text .block2__date {
+        position: absolute;
+        font-style: italic;
         font-size: 14px;
         line-height: 18px;
-        color: #171717;
-        height: 30px;
-        padding: 7px 10px;
-        margin: 5px; }
-        .block2-3 .block3 .block3__buttons .block3__button-tags:hover, .block2-3 .block3 .block3__buttons .block3__button-tags:active {
-          -webkit-text-decoration-line: underline;
-                  text-decoration-line: underline; }
-    .block2-3 .block3 .block3__form .block3__title4 {
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 21px;
-      color: #171717;
-      padding: 35px 0px 10px; }
-    .block2-3 .block3 .block3__form .block3__form-text {
-      font-size: 14px;
-      line-height: 24px;
-      color: #666666;
-      padding-bottom: 14px; }
-    .block2-3 .block3 .block3__form .block3__input {
-      background: #FFFFFF;
-      border: 1px solid #E5E5E5;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      border-radius: 3px;
-      font-size: 14px;
-      line-height: 18px;
-      color: #AEB3BB;
-      width: 100%;
-      height: 50px;
-      padding: 15px;
-      margin: 10px 0px 5px;
-      cursor: pointer; }
-      .block2-3 .block3 .block3__form .block3__input:hover {
-        background: #F4F6FA; }
-      .block2-3 .block3 .block3__form .block3__input:focus {
-        color: #000000;
-        background: #FFFFFF;
-        -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-        border: none; }
-    .block2-3 .block3 .block3__form .block3__form-button {
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 18px;
-      color: #FFFFFF;
-      text-align: center;
-      background: #232323;
-      border-radius: 3px;
-      border: none;
-      height: 50px;
-      width: 100%;
-      margin-top: 10px;
-      cursor: pointer; }
-      .block2-3 .block3 .block3__form .block3__form-button:hover {
-        background: #5C5C5C; }
-      .block2-3 .block3 .block3__form .block3__form-button:focus {
-        background: #232323;
-        border: 2px dashed rgba(255, 255, 255, 0.5); }
-      .block2-3 .block3 .block3__form .block3__form-button:active {
-        background: #0E0E0E;
-        border: none; }
-
-@media (max-width: 980px) {
-  .block2-3 {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-    .block2-3 .block2 {
-      margin-right: 0; }
-    .block2-3 .block3 {
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      grid-template-columns: repeat(2, 270px);
-      grid-template-rows: auto;
-      grid-template-areas: "title title" "card1 card2" "card3 card4";
-      grid-column-gap: 60px;
-      grid-row-gap: 40px; }
-      .block2-3 .block3 .block3__title1 {
-        grid-area: title;
-        padding-top: 68px; }
-      .block2-3 .block3 .block3__card1 {
-        grid-area: card1; }
-      .block2-3 .block3 .block3__card2 {
-        grid-area: card2; }
-      .block2-3 .block3 .block3__card3 {
-        grid-area: card3; }
-      .block2-3 .block3 .block3__card4 {
-        grid-area: card4; }
-      .block2-3 .block3 .block3__photo .block3__title2 {
-        padding: 25px 0px 15px; }
-      .block2-3 .block3 .block3__buttons .block3__title3 {
-        padding: 25px 0px 26px; }
-      .block2-3 .block3 .block3__form .block3__title4 {
-        padding: 8px 0px 11px; } }
-@media (max-width: 768px) {
-  .block2-3 .block2 {
-    display: grid;
-    grid-template-columns: 370px;
-    grid-row-gap: 280px;
-    padding: 45px 0px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center; }
-    .block2-3 .block2 .block2__card .block2__card-text {
-      position: absolute;
-      width: 350px;
-      height: 324px;
-      background-color: white;
-      -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-              box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-      margin: -120px 10px; }
-    .block2-3 .block2 .block1 .block1__card1 .block1__mark, .block1 .block1__card1 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block1 .block1__card2 .block1__mark, .block1 .block1__card2 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block1 .block1__card3 .block1__mark, .block1 .block1__card3 .block2-3 .block2 .block1__mark,
-    .block2-3 .block2 .block1 .block1__card4 .block1__mark,
-    .block1 .block1__card4 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block1 .block1__card5 .block1__mark, .block1 .block1__card5 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .block2 .block3__mark, .block2-3 .block2 .block3 .block3__card2 .block3__mark, .block2-3 .block3 .block3__card2 .block2 .block3__mark,
-    .block2-3 .block2 .block3 .block3__card3 .block3__mark,
-    .block2-3 .block3 .block3__card3 .block2 .block3__mark, .block2-3 .block2 .block3 .block3__card4 .block3__mark, .block2-3 .block3 .block3__card4 .block2 .block3__mark {
-      position: absolute;
-      font-size: 12px;
-      line-height: 16px;
-      background: #4A90E2;
-      color: white;
-      border-radius: 3px;
-      width: 62px;
-      height: 22px;
-      padding-top: 2.5px;
-      text-align: center;
-      left: 15px;
-      top: 30px; }
-    .block2-3 .block2 .block2__card .block2__card-text .block2__title {
-      position: absolute;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 28px;
-      color: #171717;
-      left: 15px;
-      right: 40px; }
-    .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__date, .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__date, .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__date, .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
-    .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__date,
-    .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__date, .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block2__card .block2__card-text .block2__date {
-      position: absolute;
-      font-style: italic;
-      font-size: 14px;
-      line-height: 18px;
-      left: 15px;
-      bottom: 165px;
-      color: #666666; }
-    .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__text, .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__text, .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__text, .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
-    .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__text,
-    .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__text, .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block2__card .block2__card-text .block2__text {
-      position: absolute;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 24px;
-      left: 15px;
-      right: 40px;
-      color: #666666;
-      top: 170px; }
-    .block2-3 .block2 .block2__card .block2__image {
-      width: 100%;
-      height: 404px; }
-  .block2-3 .block3 {
-    grid-template-columns: 270px;
-    grid-template-areas: "title" "card1" "card2" "card3" "card4";
-    grid-column-gap: 65px;
-    grid-row-gap: 30px; }
-    .block2-3 .block3 .block3__title1 {
-      padding: 8px 0px; }
-    .block2-3 .block3 .block3__photo .block3__title2 {
-      padding: 2px 0px 15px; }
-    .block2-3 .block3 .block3__buttons .block3__title3 {
-      padding: 18px 0px 26px; }
-    .block2-3 .block3 .block3__form .block3__title4 {
-      padding: 18px 0px 11px; } }
+        left: 15px;
+        bottom: 165px;
+        color: #666666; }
+      .main .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .main .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text,
+      .main .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__text,
+      .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
+      .main .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__text,
+      .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text,
+      .main .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__text,
+      .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .main .block2-3 .block2 .block2__card .block2__card-text .block2__text {
+        position: absolute;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 24px;
+        left: 15px;
+        right: 40px;
+        color: #666666;
+        top: 170px; }
+      .main .block2-3 .block2 .block2__card .block2__image {
+        width: 100%;
+        height: 404px; }
+    .main .block2-3 .block3 {
+      grid-template-columns: 270px;
+      grid-template-areas: "title" "card1" "card2" "card3" "card4";
+      grid-column-gap: 65px;
+      grid-row-gap: 30px; }
+      .main .block2-3 .block3 .block3__title1 {
+        padding: 8px 0px; }
+      .main .block2-3 .block3 .block3__photo .block3__title2 {
+        padding: 2px 0px 15px; }
+      .main .block2-3 .block3 .block3__buttons .block3__title3 {
+        padding: 18px 0px 26px; }
+      .main .block2-3 .block3 .block3__form .block3__title4 {
+        padding: 18px 0px 11px; } }
 .footer {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   display: grid;
   grid-template-columns: repeat(3, 310px);
   grid-template-areas: "block1 block2 block3";
@@ -634,12 +664,11 @@ body {
   position: relative;
   background: #171717;
   color: white;
+  justify-content: center;
   padding: 62px 40px; }
   .footer .footer__block1 {
     grid-area: block1; }
     .footer .footer__block1 .footer__block1-titles {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex; }
       .footer .footer__block1 .footer__block1-titles .footer__block1-title1 {
         font-size: 14px;
@@ -665,11 +694,8 @@ body {
       line-height: 26px;
       padding: 64px 0px 23px; }
     .footer .footer__block1 .footer__block1-buttons {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap; }
+      flex-wrap: nowrap; }
       .footer .footer__block1 .footer__block1-buttons .footer__block1-button {
         cursor: pointer;
         width: 34px;
@@ -686,8 +712,9 @@ body {
           border-radius: 3px;
           color: #000000; }
           .footer .footer__block1 .footer__block1-buttons .footer__block1-button:active .footer__block1-image {
-            -webkit-filter: invert(1);
-                    filter: invert(1); }
+            filter: invert(1); }
+        .footer .footer__block1 .footer__block1-buttons .footer__block1-button .footer__block1-image {
+          padding-top: 10%; }
   .footer .footer__block2 {
     grid-area: block2;
     display: grid;
@@ -715,8 +742,7 @@ body {
       grid-area: text3; }
     .footer .footer__block2 .footer__block2a, .footer .footer__block2 .footer__block2b,
     .footer .footer__block2 .footer__block2c {
-      -ms-flex-item-align: center;
-          align-self: center;
+      align-self: center;
       cursor: pointer; }
       .footer .footer__block2 .footer__block2a .footer__block2-text, .footer .footer__block2 .footer__block2b .footer__block2-text,
       .footer .footer__block2 .footer__block2c .footer__block2-text {
@@ -732,8 +758,7 @@ body {
         color: #CECECE; }
       .footer .footer__block2 .footer__block2a:hover, .footer .footer__block2 .footer__block2b:hover,
       .footer .footer__block2 .footer__block2c:hover {
-        -webkit-text-decoration-line: underline;
-                text-decoration-line: underline; }
+        text-decoration-line: underline; }
   .footer .footer__block3 {
     grid-area: block3;
     display: block;
@@ -774,24 +799,16 @@ body {
   color: #FFFFFF;
   background-color: #000000;
   height: 90px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  justify-content: center;
+  align-items: center; }
   .footer__nav .footer__title {
     grid-area: title;
     font-size: 14px;
     line-height: 17px; }
   .footer__nav .footer__nav-list {
     grid-area: list;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     list-style-type: none; }
     .footer__nav .footer__nav-list .footer__nav-item-link {
       text-decoration: none;
@@ -812,14 +829,12 @@ body {
         border-bottom: 2px solid #FFFFFF;
         background: #000000; }
 
-@media (max-width: 980px) {
+@media (max-width: 1280px) {
   .footer {
     grid-template-columns: repeat(2, 350px);
     grid-template-areas: "block1 block2" "block3 block3";
     grid-column-gap: 30px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
+    justify-content: center; }
     .footer .footer__block3 .footer__block3-title {
       padding: 48px 0px 38px; }
 
@@ -827,9 +842,7 @@ body {
     grid-template-columns: repeat(2, 350px);
     grid-template-areas: "title list";
     grid-column-gap: 30px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; } }
+    justify-content: center; } }
 @media (max-width: 768px) {
   .footer {
     grid-template-columns: 295px;
@@ -845,9 +858,7 @@ body {
     grid-template-columns: 370px;
     grid-template-rows: auto;
     grid-template-areas: "list" "title";
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
+    justify-content: center; }
     .footer__nav .footer__title {
       text-align: center; } }
 

@@ -1,161 +1,187 @@
-.block1 {
+.main {
+  max-width: 1170px;
+  margin: auto;
+
+  .block1 {
     width: 100%;
     display: grid;
     color: white;
     grid-template-columns: repeat(3, 370px);
     grid-template-rows: auto;
     grid-template-areas:
-        "card1 card2 card3"
-        "card1 card4 card5";
-    grid-column-gap: 30px;
+      "card1 card2 card3"
+      "card1 card4 card5";
+    grid-column-gap: 10px;
     grid-row-gap: 30px;
     padding: 30px 0px;
     justify-content: center;
     align-content: center;
 
     %mark {
-        position: absolute;
-        font-size: 14px;
-        line-height: 17px;
-        background: #4A90E2;
-        color: white;
-        border-radius: 3px;
-        width: 62px;
-        height: 22px;
-        padding-top: 2.5px;
-        text-align: center;
-        left: 22px;
-        top: 30px;
+      position: absolute;
+      font-size: 14px;
+      line-height: 17px;
+      background: #4A90E2;
+      color: white;
+      border-radius: 3px;
+      width: 62px;
+      height: 22px;
+      padding-top: 2.5px;
+      text-align: center;
+      left: 22px;
+      top: 30px;
     }
+
     %date {
-        position: absolute;
-        font-size: 14px;
-        line-height: 18px;
-        left: 22px;
-        bottom: 90px;
+      position: absolute;
+      font-size: 14px;
+      line-height: 18px;
+      left: 22px;
+      bottom: 90px;
     }
+
     %text {
-        position: absolute;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 30px;
-        left: 22px;
-        bottom: 22px;
+      position: absolute;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 30px;
+      left: 22px;
+      bottom: 22px;
     }
 
     .block1__card1 {
-        grid-area: card1;
-        position: relative;
-        cursor: pointer;
+      grid-area: card1;
+      position: relative;
+      cursor: pointer;
 
-        .block1__mark {
-            @extend %mark;
+      .block1__mark {
+        @extend %mark;
+      }
+
+      .block1__card1-text {
+        position: absolute;
+        height: 560px;
+        width: 100%;
+        border-radius: 5px;
+        top: 0px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%);
+
+        .block1__date {
+          @extend %date;
+          bottom: 100px;
         }
+
+        .block1__text {
+          @extend %text;
+          font-size: 26px;
+          line-height: 36px;
+        }
+      }
+
+      &:hover {
         .block1__card1-text {
-            position: absolute;
-            height: 560px;
-            width: 100%;
-            border-radius: 5px;
-            top: 0px;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%);
+          position: absolute;
+          height: 560px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          border-radius: 5px;
+          top: 0px;
+          transition-duration: 0.3s;
+        }
 
-            .block1__date {
-                @extend %date;
-                bottom: 100px;
-            }
-            .block1__text {
-                @extend %text;
-                font-size: 26px;
-                line-height: 36px;
-            }
+        .block1__text {
+          text-decoration-line: underline;
         }
-        &:hover {
-            .block1__card1-text {
-                position: absolute;
-                height: 560px;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.6);
-                border-radius: 5px;
-                top: 0px;
-                transition-duration: 0.3s;
-                }
-            
-            .block1__text {
-            text-decoration-line: underline;
-            }
-        }
+      }
     }
+
     .block1__card2 {
-        grid-area: card2;
+      grid-area: card2;
     }
+
     .block1__card3 {
-        grid-area: card3;
+      grid-area: card3;
     }
 
     .block1__card4 {
-        grid-area: card4;
+      grid-area: card4;
     }
 
     .block1__card5 {
-        grid-area: card5;
+      grid-area: card5;
     }
-    
-    .block1__card2, .block1__card3,
-    .block1__card4, .block1__card5 {
-        position: relative;
-        cursor: pointer;
 
-        .block1__mark {
-            @extend %mark;
+    .block1__card2,
+    .block1__card3,
+    .block1__card4,
+    .block1__card5 {
+      position: relative;
+      cursor: pointer;
+
+      .block1__mark {
+        @extend %mark;
+      }
+
+      .block1__card2-text {
+        position: absolute;
+        height: 265px;
+        width: 100%;
+        border-radius: 5px;
+        top: 0px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%);
+
+        .block1__date {
+          @extend %date;
         }
 
+        .block1__text {
+          @extend %text;
+        }
+      }
+
+      &:hover {
         .block1__card2-text {
-            position: absolute;
-            height: 265px;
-            width: 100%;
-            border-radius: 5px;
-            top: 0px;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%);
+          position: absolute;
+          height: 265px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          border-radius: 5px;
+          top: 0px;
+          transition-duration: 0.3s;
+        }
 
-            .block1__date {
-                @extend %date;
-            }
-            .block1__text {
-                @extend %text;
-            }
+        .block1__text {
+          text-decoration-line: underline;
         }
-    
-        &:hover {
-            .block1__card2-text{
-                position: absolute;
-                height: 265px;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.6);
-                border-radius: 5px;
-                top: 0px;
-                transition-duration: 0.3s;
-            }
-            .block1__text {
-            text-decoration-line: underline;
-            }
-        }
+      }
     }
-
+  }
 }
-@media (max-width: 980px) {
+
+@media (max-width: 1280px) {
+  .main {
+    max-width: 760px;
+    margin: auto;
+
     .block1 {
-        grid-template-columns: repeat(2, 370px);
-        grid-template-areas:
+      grid-template-columns: repeat(2, 370px);
+      grid-template-areas:
         "card1 card2"
         "card1 card4"
         "card3 card5";
-        justify-content: center;
+      justify-content: center;
     }
+  }
 }
+
 @media (max-width: 768px) {
+  .main {
+    max-width: 370px;
+    margin: auto;
+
     .block1 {
-        grid-template-columns: repeat(1, 370px);
-        grid-template-areas:
+      grid-template-columns: repeat(1, 370px);
+      grid-template-areas:
         "card1"
         "card1"
         "card2"
@@ -163,4 +189,5 @@
         "card3"
         "card5";
     }
+  }
 }

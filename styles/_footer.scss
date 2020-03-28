@@ -1,5 +1,4 @@
 .footer {
-    justify-content: center;
     display: grid;
     grid-template-columns: repeat(3, 310px);
     grid-template-areas:
@@ -8,6 +7,7 @@
     position: relative;
     background: #171717;
     color: white;
+    justify-content: center;
     padding: 62px 40px;
 
     .footer__block1 {
@@ -69,6 +69,9 @@
                     .footer__block1-image {
                     filter: invert(1);
                     }
+                }
+                .footer__block1-image {
+                    padding-top: 10%;
                 }
             }
         }
@@ -223,7 +226,7 @@
     }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1280px) {
     .footer {
         grid-template-columns: repeat(2, 350px);
         grid-template-areas:
