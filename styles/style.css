@@ -125,13 +125,13 @@ body {
     .main .block1 .block1__card1 .block1__mark, .main .block1 .block1__card2 .block1__mark,
     .main .block1 .block1__card3 .block1__mark,
     .main .block1 .block1__card4 .block1__mark,
-    .main .block1 .block1__card5 .block1__mark, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .main .block2-3 .block2 .block2__card .block2__card-text .block1 .block2__mark, .main .block1 .block2-3 .block3 .block3__card1 .block3__mark, .main .block2-3 .block3 .block3__card1 .block1 .block3__mark,
+    .main .block1 .block1__card5 .block1__mark, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block2__card .block2__card-text .main .block1 .block2__mark, .main .block1 .block2-3 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .main .block1 .block3__mark,
     .main .block1 .block2-3 .block3 .block3__card2 .block3__mark,
-    .main .block2-3 .block3 .block3__card2 .block1 .block3__mark,
+    .block2-3 .block3 .block3__card2 .main .block1 .block3__mark,
     .main .block1 .block2-3 .block3 .block3__card3 .block3__mark,
-    .main .block2-3 .block3 .block3__card3 .block1 .block3__mark,
+    .block2-3 .block3 .block3__card3 .main .block1 .block3__mark,
     .main .block1 .block2-3 .block3 .block3__card4 .block3__mark,
-    .main .block2-3 .block3 .block3__card4 .block1 .block3__mark {
+    .block2-3 .block3 .block3__card4 .main .block1 .block3__mark {
       position: absolute;
       font-size: 14px;
       line-height: 17px;
@@ -147,7 +147,7 @@ body {
     .main .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block1__date,
     .main .block1 .block1__card3 .block1__card2-text .block1__date,
     .main .block1 .block1__card4 .block1__card2-text .block1__date,
-    .main .block1 .block1__card5 .block1__card2-text .block1__date, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__date, .main .block2-3 .block2 .block2__card .block2__card-text .block1 .block2__date {
+    .main .block1 .block1__card5 .block1__card2-text .block1__date, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__date, .block2-3 .block2 .block2__card .block2__card-text .main .block1 .block2__date {
       position: absolute;
       font-size: 14px;
       line-height: 18px;
@@ -156,7 +156,7 @@ body {
     .main .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block1__text,
     .main .block1 .block1__card3 .block1__card2-text .block1__text,
     .main .block1 .block1__card4 .block1__card2-text .block1__text,
-    .main .block1 .block1__card5 .block1__card2-text .block1__text, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__text, .main .block2-3 .block2 .block2__card .block2__card-text .block1 .block2__text {
+    .main .block1 .block1__card5 .block1__card2-text .block1__text, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__text, .block2-3 .block2 .block2__card .block2__card-text .main .block1 .block2__text {
       position: absolute;
       font-weight: bold;
       font-size: 20px;
@@ -245,267 +245,195 @@ body {
     .main .block1 {
       grid-template-columns: repeat(1, 370px);
       grid-template-areas: "card1" "card1" "card2" "card4" "card3" "card5"; } }
-.main {
-  max-width: 1170px;
-  margin: auto; }
-  .main .block2-3 {
-    display: flex;
+.block2-3 {
+  display: flex;
+  justify-content: center;
+  padding: 45px 0px 63px; }
+  .block2-3 .block2 {
+    display: grid;
+    grid-template-columns: 785px;
+    grid-row-gap: 160px;
     justify-content: center;
-    padding: 45px 0px 63px; }
-    .main .block2-3 .block2 {
+    align-content: center;
+    margin-right: 90px; }
+    .block2-3 .block2 .block2__card .block2__card-text {
+      position: absolute;
+      width: 725px;
+      height: 250px;
+      background-color: white;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      margin: -120px 30px 0px; }
+    .block2-3 .block2 .main .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block2 .block1__mark, .block2-3 .block2 .main .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1 .block1__card3 .block1__mark,
+    .main .block1 .block1__card3 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1 .block1__card4 .block1__mark,
+    .main .block1 .block1__card4 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1 .block1__card5 .block1__mark,
+    .main .block1 .block1__card5 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .block2 .block3__mark,
+    .block2-3 .block2 .block3 .block3__card2 .block3__mark,
+    .block2-3 .block3 .block3__card2 .block2 .block3__mark,
+    .block2-3 .block2 .block3 .block3__card3 .block3__mark,
+    .block2-3 .block3 .block3__card3 .block2 .block3__mark,
+    .block2-3 .block2 .block3 .block3__card4 .block3__mark,
+    .block2-3 .block3 .block3__card4 .block2 .block3__mark {
+      position: absolute;
+      font-size: 14px;
+      line-height: 17px;
+      background: #4A90E2;
+      color: white;
+      border-radius: 3px;
+      width: 62px;
+      height: 22px;
+      padding-top: 2.5px;
+      text-align: center;
+      left: 30px;
+      top: 30px; }
+    .block2-3 .block2 .block2__card .block2__card-text .block2__title {
+      position: absolute;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 28px;
+      color: #171717;
+      left: 30px;
+      top: 72px; }
+    .block2-3 .block2 .main .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .block2-3 .block2 .main .block1 .block1__card2 .block1__card2-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1 .block1__card3 .block1__card2-text .block1__date,
+    .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1 .block1__card4 .block1__card2-text .block1__date,
+    .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1 .block1__card5 .block1__card2-text .block1__date,
+    .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block2__card .block2__card-text .block2__date {
+      position: absolute;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 18px;
+      left: 30px;
+      bottom: 115px;
+      color: #666666; }
+    .block2-3 .block2 .main .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .block2-3 .block2 .main .block1 .block1__card2 .block1__card2-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1 .block1__card3 .block1__card2-text .block1__text,
+    .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1 .block1__card4 .block1__card2-text .block1__text,
+    .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1 .block1__card5 .block1__card2-text .block1__text,
+    .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block2__card .block2__card-text .block2__text {
+      position: absolute;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 24px;
+      left: 30px;
+      color: #666666;
+      top: 145px; }
+    .block2-3 .block2 .block2__card {
+      cursor: pointer; }
+      .block2-3 .block2 .block2__card:hover .block2__card-text {
+        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.5); }
+      .block2-3 .block2 .block2__card:hover .block2__title {
+        text-decoration-line: underline; }
+      .block2-3 .block2 .block2__card .block2__image {
+        width: 785px;
+        height: 455px; }
+  .block2-3 .block2__buttons {
+    text-align: center; }
+    .block2-3 .block2__buttons .block2__button {
+      cursor: pointer;
+      background: #FFFFFF;
+      border: 1px solid #E5E5E5;
+      border-radius: 3px;
+      width: 40px;
+      height: 40px; }
+      .block2-3 .block2__buttons .block2__button:hover {
+        background: #EFEFEF;
+        border: 1px solid #E5E5E5; }
+      .block2-3 .block2__buttons .block2__button:active {
+        background: #000000;
+        color: white; }
+  .block2-3 .block3 {
+    display: grid;
+    grid-template-columns: 270px;
+    grid-template-rows: 30px 320px 320px 320px 320px 530px 350px 350px;
+    grid-template-areas: "block3__title1" "block3__card1" "block3__card2" "block3__card3" "block3__card4" "block3__photo" "block3__buttons" "block3__form";
+    grid-row-gap: 25px; }
+    .block2-3 .block3 .main .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block3 .block1__mark, .block2-3 .block3 .main .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block3 .block1__mark,
+    .block2-3 .block3 .main .block1 .block1__card3 .block1__mark,
+    .main .block1 .block1__card3 .block2-3 .block3 .block1__mark,
+    .block2-3 .block3 .main .block1 .block1__card4 .block1__mark,
+    .main .block1 .block1__card4 .block2-3 .block3 .block1__mark,
+    .block2-3 .block3 .main .block1 .block1__card5 .block1__mark,
+    .main .block1 .block1__card5 .block2-3 .block3 .block1__mark, .block2-3 .block3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block2__card .block2__card-text .block3 .block2__mark, .block2-3 .block3 .block3__card1 .block3__mark,
+    .block2-3 .block3 .block3__card2 .block3__mark,
+    .block2-3 .block3 .block3__card3 .block3__mark,
+    .block2-3 .block3 .block3__card4 .block3__mark {
+      position: absolute;
+      font-size: 14px;
+      line-height: 17px;
+      background: #4A90E2;
+      color: white;
+      border-radius: 3px;
+      width: 62px;
+      height: 22px;
+      padding-top: 2.5px;
+      text-align: center;
+      left: 30px;
+      top: 30px; }
+    .block2-3 .block3 .block3__card1 .block3__text,
+    .block2-3 .block3 .block3__card2 .block3__text,
+    .block2-3 .block3 .block3__card3 .block3__text,
+    .block2-3 .block3 .block3__card4 .block3__text {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 28px;
+      color: #171717;
+      padding: 20px 0px 10px;
+      left: 0px;
+      bottom: 0px; }
+    .block2-3 .block3 .block3__card1 .block3__data,
+    .block2-3 .block3 .block3__card2 .block3__data,
+    .block2-3 .block3 .block3__card3 .block3__data,
+    .block2-3 .block3 .block3__card4 .block3__data {
+      font-style: italic;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: #666666; }
+    .block2-3 .block3 .block3__title1 {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 23px;
+      color: #171717; }
+    .block2-3 .block3 .block3__card1,
+    .block2-3 .block3 .block3__card2,
+    .block2-3 .block3 .block3__card3,
+    .block2-3 .block3 .block3__card4 {
+      position: relative;
+      cursor: pointer; }
+      .block2-3 .block3 .block3__card1 .block3__mark,
+      .block2-3 .block3 .block3__card2 .block3__mark,
+      .block2-3 .block3 .block3__card3 .block3__mark,
+      .block2-3 .block3 .block3__card4 .block3__mark {
+        top: 20px; }
+      .block2-3 .block3 .block3__card1:hover .block3__text,
+      .block2-3 .block3 .block3__card2:hover .block3__text,
+      .block2-3 .block3 .block3__card3:hover .block3__text,
+      .block2-3 .block3 .block3__card4:hover .block3__text {
+        text-decoration-line: underline; }
+    .block2-3 .block3 .block3__photo {
       display: grid;
-      grid-template-columns: 785px;
-      grid-row-gap: 180px;
-      justify-content: center;
-      align-content: center;
-      margin-right: 130px; }
-      .main .block2-3 .block2 .block2__card .block2__card-text {
-        position: absolute;
-        width: 725px;
-        height: 250px;
-        background-color: white;
-        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        margin: -120px 20px; }
-      .main .block2-3 .block2 .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block2 .block1__mark, .main .block2-3 .block2 .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block2 .block1__mark,
-      .main .block2-3 .block2 .block1 .block1__card3 .block1__mark,
-      .main .block1 .block1__card3 .block2-3 .block2 .block1__mark,
-      .main .block2-3 .block2 .block1 .block1__card4 .block1__mark,
-      .main .block1 .block1__card4 .block2-3 .block2 .block1__mark,
-      .main .block2-3 .block2 .block1 .block1__card5 .block1__mark,
-      .main .block1 .block1__card5 .block2-3 .block2 .block1__mark, .main .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .main .block2-3 .block2 .block3 .block3__card1 .block3__mark, .main .block2-3 .block3 .block3__card1 .block2 .block3__mark,
-      .main .block2-3 .block2 .block3 .block3__card2 .block3__mark,
-      .main .block2-3 .block3 .block3__card2 .block2 .block3__mark,
-      .main .block2-3 .block2 .block3 .block3__card3 .block3__mark,
-      .main .block2-3 .block3 .block3__card3 .block2 .block3__mark,
-      .main .block2-3 .block2 .block3 .block3__card4 .block3__mark,
-      .main .block2-3 .block3 .block3__card4 .block2 .block3__mark {
-        position: absolute;
-        font-size: 14px;
-        line-height: 17px;
-        background: #4A90E2;
-        color: white;
-        border-radius: 3px;
-        width: 62px;
-        height: 22px;
-        padding-top: 2.5px;
-        text-align: center;
-        left: 30px;
-        top: 30px; }
-      .main .block2-3 .block2 .block2__card .block2__card-text .block2__title {
-        position: absolute;
-        font-weight: bold;
-        font-size: 25px;
-        line-height: 28px;
-        color: #171717;
-        left: 30px;
-        top: 72px; }
-      .main .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .main .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date,
-      .main .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__date,
-      .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
-      .main .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__date,
-      .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date,
-      .main .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__date,
-      .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .main .block2-3 .block2 .block2__card .block2__card-text .block2__date {
-        position: absolute;
-        font-style: italic;
-        font-size: 14px;
-        line-height: 18px;
-        left: 30px;
-        bottom: 115px;
-        color: #666666; }
-      .main .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .main .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text,
-      .main .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__text,
-      .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
-      .main .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__text,
-      .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text,
-      .main .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__text,
-      .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .main .block2-3 .block2 .block2__card .block2__card-text .block2__text {
-        position: absolute;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 24px;
-        left: 30px;
-        color: #666666;
-        top: 145px; }
-      .main .block2-3 .block2 .block2__card {
-        cursor: pointer; }
-        .main .block2-3 .block2 .block2__card:hover .block2__card-text {
-          box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.5); }
-        .main .block2-3 .block2 .block2__card:hover .block2__title {
-          text-decoration-line: underline; }
-    .main .block2-3 .block2__buttons {
-      text-align: center; }
-      .main .block2-3 .block2__buttons .block2__button {
-        cursor: pointer;
-        background: #FFFFFF;
-        border: 1px solid #E5E5E5;
-        border-radius: 3px;
-        width: 40px;
-        height: 40px; }
-        .main .block2-3 .block2__buttons .block2__button:hover {
-          background: #EFEFEF;
-          border: 1px solid #E5E5E5; }
-        .main .block2-3 .block2__buttons .block2__button:active {
-          background: #000000;
-          color: white; }
-    .main .block2-3 .block3 {
-      display: grid;
-      grid-template-columns: 270px;
-      grid-template-rows: 30px 320px 320px 320px 320px 530px 350px 350px;
-      grid-template-areas: "block3__title1" "block3__card1" "block3__card2" "block3__card3" "block3__card4" "block3__photo" "block3__buttons" "block3__form";
-      grid-row-gap: 25px; }
-      .main .block2-3 .block3 .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block3 .block1__mark, .main .block2-3 .block3 .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block3 .block1__mark,
-      .main .block2-3 .block3 .block1 .block1__card3 .block1__mark,
-      .main .block1 .block1__card3 .block2-3 .block3 .block1__mark,
-      .main .block2-3 .block3 .block1 .block1__card4 .block1__mark,
-      .main .block1 .block1__card4 .block2-3 .block3 .block1__mark,
-      .main .block2-3 .block3 .block1 .block1__card5 .block1__mark,
-      .main .block1 .block1__card5 .block2-3 .block3 .block1__mark, .main .block2-3 .block3 .block2 .block2__card .block2__card-text .block2__mark, .main .block2-3 .block2 .block2__card .block2__card-text .block3 .block2__mark, .main .block2-3 .block3 .block3__card1 .block3__mark,
-      .main .block2-3 .block3 .block3__card2 .block3__mark,
-      .main .block2-3 .block3 .block3__card3 .block3__mark,
-      .main .block2-3 .block3 .block3__card4 .block3__mark {
-        position: absolute;
-        font-size: 14px;
-        line-height: 17px;
-        background: #4A90E2;
-        color: white;
-        border-radius: 3px;
-        width: 62px;
-        height: 22px;
-        padding-top: 2.5px;
-        text-align: center;
-        left: 30px;
-        top: 30px; }
-      .main .block2-3 .block3 .block3__card1 .block3__text,
-      .main .block2-3 .block3 .block3__card2 .block3__text,
-      .main .block2-3 .block3 .block3__card3 .block3__text,
-      .main .block2-3 .block3 .block3__card4 .block3__text {
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 28px;
-        color: #171717;
-        padding: 20px 0px 10px;
-        left: 0px;
-        bottom: 0px; }
-      .main .block2-3 .block3 .block3__card1 .block3__data,
-      .main .block2-3 .block3 .block3__card2 .block3__data,
-      .main .block2-3 .block3 .block3__card3 .block3__data,
-      .main .block2-3 .block3 .block3__card4 .block3__data {
-        font-style: italic;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 18px;
-        color: #666666; }
-      .main .block2-3 .block3 .block3__title1 {
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 23px;
-        color: #171717; }
-      .main .block2-3 .block3 .block3__card1,
-      .main .block2-3 .block3 .block3__card2,
-      .main .block2-3 .block3 .block3__card3,
-      .main .block2-3 .block3 .block3__card4 {
-        position: relative;
-        cursor: pointer; }
-        .main .block2-3 .block3 .block3__card1 .block3__mark,
-        .main .block2-3 .block3 .block3__card2 .block3__mark,
-        .main .block2-3 .block3 .block3__card3 .block3__mark,
-        .main .block2-3 .block3 .block3__card4 .block3__mark {
-          top: 20px; }
-        .main .block2-3 .block3 .block3__card1:hover .block3__text,
-        .main .block2-3 .block3 .block3__card2:hover .block3__text,
-        .main .block2-3 .block3 .block3__card3:hover .block3__text,
-        .main .block2-3 .block3 .block3__card4:hover .block3__text {
-          text-decoration-line: underline; }
-      .main .block2-3 .block3 .block3__photo {
-        display: grid;
-        grid-row-gap: 95px;
-        grid-template-areas: "title2 title2" "image1 image2" "image3 image4" "image5 image6" "button button";
-        grid-column-gap: 10px;
-        grid-row-gap: 10px;
-        justify-content: left; }
-        .main .block2-3 .block3 .block3__photo .block3__title2 {
-          grid-area: title2;
-          font-weight: bold;
-          font-size: 18px;
-          line-height: 21px;
-          color: #171717;
-          padding-bottom: 15px; }
-        .main .block2-3 .block3 .block3__photo .block3__button {
-          grid-area: button;
-          font-weight: bold;
-          font-size: 14px;
-          line-height: 18px;
-          color: #FFFFFF;
-          text-align: center;
-          background: #232323;
-          border-radius: 3px;
-          border: none;
-          height: 50px;
-          cursor: pointer; }
-          .main .block2-3 .block3 .block3__photo .block3__button:hover {
-            background: #5C5C5C; }
-          .main .block2-3 .block3 .block3__photo .block3__button:focus {
-            background: #232323;
-            border: 2px dashed rgba(255, 255, 255, 0.5); }
-          .main .block2-3 .block3 .block3__photo .block3__button:active {
-            background: #0E0E0E;
-            border: none; }
-          .main .block2-3 .block3 .block3__photo .block3__button .block3__button-icon {
-            padding-right: 10px; }
-      .main .block2-3 .block3 .block3__buttons {
-        width: 100%; }
-        .main .block2-3 .block3 .block3__buttons .block3__title3 {
-          font-weight: bold;
-          font-size: 18px;
-          line-height: 21px;
-          color: #171717;
-          padding: 35px 0px 26px; }
-        .main .block2-3 .block3 .block3__buttons .block3__button-tags {
-          background: #EBEBEB;
-          border-radius: 3px;
-          border: none;
-          font-size: 14px;
-          line-height: 18px;
-          color: #171717;
-          height: 30px;
-          padding: 7px 10px;
-          margin: 5px; }
-          .main .block2-3 .block3 .block3__buttons .block3__button-tags:hover, .main .block2-3 .block3 .block3__buttons .block3__button-tags:active {
-            text-decoration-line: underline; }
-      .main .block2-3 .block3 .block3__form .block3__title4 {
+      grid-row-gap: 95px;
+      grid-template-areas: "title2 title2" "image1 image2" "image3 image4" "image5 image6" "button button";
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      justify-content: left; }
+      .block2-3 .block3 .block3__photo .block3__title2 {
+        grid-area: title2;
         font-weight: bold;
         font-size: 18px;
         line-height: 21px;
         color: #171717;
-        padding: 35px 0px 10px; }
-      .main .block2-3 .block3 .block3__form .block3__form-text {
-        font-size: 14px;
-        line-height: 24px;
-        color: #666666;
-        padding-bottom: 14px; }
-      .main .block2-3 .block3 .block3__form .block3__input {
-        background: #FFFFFF;
-        border: 1px solid #E5E5E5;
-        box-sizing: border-box;
-        border-radius: 3px;
-        font-size: 14px;
-        line-height: 18px;
-        color: #AEB3BB;
-        width: 100%;
-        height: 50px;
-        padding: 15px;
-        margin: 10px 0px 5px;
-        cursor: pointer; }
-        .main .block2-3 .block3 .block3__form .block3__input:hover {
-          background: #F4F6FA; }
-        .main .block2-3 .block3 .block3__form .block3__input:focus {
-          color: #000000;
-          background: #FFFFFF;
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-          border: none; }
-      .main .block2-3 .block3 .block3__form .block3__form-button {
+        padding-bottom: 15px; }
+      .block2-3 .block3 .block3__photo .block3__button {
+        grid-area: button;
         font-weight: bold;
         font-size: 14px;
         line-height: 18px;
@@ -515,147 +443,213 @@ body {
         border-radius: 3px;
         border: none;
         height: 50px;
-        width: 100%;
-        margin-top: 10px;
         cursor: pointer; }
-        .main .block2-3 .block3 .block3__form .block3__form-button:hover {
+        .block2-3 .block3 .block3__photo .block3__button:hover {
           background: #5C5C5C; }
-        .main .block2-3 .block3 .block3__form .block3__form-button:focus {
+        .block2-3 .block3 .block3__photo .block3__button:focus {
           background: #232323;
           border: 2px dashed rgba(255, 255, 255, 0.5); }
-        .main .block2-3 .block3 .block3__form .block3__form-button:active {
+        .block2-3 .block3 .block3__photo .block3__button:active {
           background: #0E0E0E;
           border: none; }
-
-@media (max-width: 1280px) {
-  .main {
-    max-width: 760px;
-    margin: auto; }
-    .main .block2-3 {
-      flex-direction: column; }
-      .main .block2-3 .block2 {
-        margin-right: 0; }
-      .main .block2-3 .block3 {
-        justify-content: center;
-        grid-template-columns: repeat(2, 270px);
-        grid-template-rows: auto;
-        grid-template-areas: "title title" "card1 card2" "card3 card4";
-        grid-column-gap: 60px;
-        grid-row-gap: 40px; }
-        .main .block2-3 .block3 .block3__title1 {
-          grid-area: title;
-          padding-top: 68px; }
-        .main .block2-3 .block3 .block3__card1 {
-          grid-area: card1; }
-        .main .block2-3 .block3 .block3__card2 {
-          grid-area: card2; }
-        .main .block2-3 .block3 .block3__card3 {
-          grid-area: card3; }
-        .main .block2-3 .block3 .block3__card4 {
-          grid-area: card4; }
-        .main .block2-3 .block3 .block3__photo .block3__title2 {
-          padding: 25px 0px 15px; }
-        .main .block2-3 .block3 .block3__buttons .block3__title3 {
-          padding: 25px 0px 26px; }
-        .main .block2-3 .block3 .block3__form .block3__title4 {
-          padding: 8px 0px 11px; } }
-@media (max-width: 768px) {
-  .main {
-    max-width: 766px;
-    margin: auto; }
-    .main .block2-3 .block2 {
-      display: grid;
-      grid-template-columns: 370px;
-      grid-row-gap: 280px;
-      padding: 45px 0px;
-      justify-content: center;
-      align-content: center; }
-      .main .block2-3 .block2 .block2__card .block2__card-text {
-        position: absolute;
-        width: 350px;
-        height: 324px;
-        background-color: white;
-        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        margin: -120px 10px; }
-      .main .block2-3 .block2 .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block2 .block1__mark, .main .block2-3 .block2 .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block2 .block1__mark,
-      .main .block2-3 .block2 .block1 .block1__card3 .block1__mark,
-      .main .block1 .block1__card3 .block2-3 .block2 .block1__mark,
-      .main .block2-3 .block2 .block1 .block1__card4 .block1__mark,
-      .main .block1 .block1__card4 .block2-3 .block2 .block1__mark,
-      .main .block2-3 .block2 .block1 .block1__card5 .block1__mark,
-      .main .block1 .block1__card5 .block2-3 .block2 .block1__mark, .main .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .main .block2-3 .block2 .block3 .block3__card1 .block3__mark, .main .block2-3 .block3 .block3__card1 .block2 .block3__mark,
-      .main .block2-3 .block2 .block3 .block3__card2 .block3__mark,
-      .main .block2-3 .block3 .block3__card2 .block2 .block3__mark,
-      .main .block2-3 .block2 .block3 .block3__card3 .block3__mark,
-      .main .block2-3 .block3 .block3__card3 .block2 .block3__mark,
-      .main .block2-3 .block2 .block3 .block3__card4 .block3__mark,
-      .main .block2-3 .block3 .block3__card4 .block2 .block3__mark {
-        position: absolute;
-        font-size: 12px;
-        line-height: 16px;
-        background: #4A90E2;
-        color: white;
-        border-radius: 3px;
-        width: 62px;
-        height: 22px;
-        padding-top: 2.5px;
-        text-align: center;
-        left: 15px;
-        top: 30px; }
-      .main .block2-3 .block2 .block2__card .block2__card-text .block2__title {
-        position: absolute;
+        .block2-3 .block3 .block3__photo .block3__button .block3__button-icon {
+          padding-right: 10px; }
+    .block2-3 .block3 .block3__buttons {
+      width: 100%; }
+      .block2-3 .block3 .block3__buttons .block3__title3 {
         font-weight: bold;
         font-size: 18px;
-        line-height: 28px;
+        line-height: 21px;
         color: #171717;
-        left: 15px;
-        right: 40px; }
-      .main .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .main .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date,
-      .main .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__date,
-      .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
-      .main .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__date,
-      .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date,
-      .main .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__date,
-      .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .main .block2-3 .block2 .block2__card .block2__card-text .block2__date {
-        position: absolute;
-        font-style: italic;
+        padding: 35px 0px 26px; }
+      .block2-3 .block3 .block3__buttons .block3__button-tags {
+        background: #EBEBEB;
+        border-radius: 3px;
+        border: none;
         font-size: 14px;
         line-height: 18px;
-        left: 15px;
-        bottom: 165px;
-        color: #666666; }
-      .main .block2-3 .block2 .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .main .block2-3 .block2 .block1 .block1__card2 .block1__card2-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text,
-      .main .block2-3 .block2 .block1 .block1__card3 .block1__card2-text .block1__text,
-      .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
-      .main .block2-3 .block2 .block1 .block1__card4 .block1__card2-text .block1__text,
-      .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text,
-      .main .block2-3 .block2 .block1 .block1__card5 .block1__card2-text .block1__text,
-      .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .main .block2-3 .block2 .block2__card .block2__card-text .block2__text {
-        position: absolute;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 24px;
-        left: 15px;
-        right: 40px;
-        color: #666666;
-        top: 170px; }
-      .main .block2-3 .block2 .block2__card .block2__image {
-        width: 100%;
-        height: 404px; }
-    .main .block2-3 .block3 {
-      grid-template-columns: 270px;
-      grid-template-areas: "title" "card1" "card2" "card3" "card4";
-      grid-column-gap: 65px;
-      grid-row-gap: 30px; }
-      .main .block2-3 .block3 .block3__title1 {
-        padding: 8px 0px; }
-      .main .block2-3 .block3 .block3__photo .block3__title2 {
-        padding: 2px 0px 15px; }
-      .main .block2-3 .block3 .block3__buttons .block3__title3 {
-        padding: 18px 0px 26px; }
-      .main .block2-3 .block3 .block3__form .block3__title4 {
-        padding: 18px 0px 11px; } }
+        color: #171717;
+        height: 30px;
+        padding: 7px 10px;
+        margin: 5px; }
+        .block2-3 .block3 .block3__buttons .block3__button-tags:hover, .block2-3 .block3 .block3__buttons .block3__button-tags:active {
+          text-decoration-line: underline; }
+    .block2-3 .block3 .block3__form .block3__title4 {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      color: #171717;
+      padding: 35px 0px 10px; }
+    .block2-3 .block3 .block3__form .block3__form-text {
+      font-size: 14px;
+      line-height: 24px;
+      color: #666666;
+      padding-bottom: 14px; }
+    .block2-3 .block3 .block3__form .block3__input {
+      background: #FFFFFF;
+      border: 1px solid #E5E5E5;
+      box-sizing: border-box;
+      border-radius: 3px;
+      font-size: 14px;
+      line-height: 18px;
+      color: #AEB3BB;
+      width: 100%;
+      height: 50px;
+      padding: 15px;
+      margin: 10px 0px 5px;
+      cursor: pointer; }
+      .block2-3 .block3 .block3__form .block3__input:hover {
+        background: #F4F6FA; }
+      .block2-3 .block3 .block3__form .block3__input:focus {
+        color: #000000;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        border: none; }
+    .block2-3 .block3 .block3__form .block3__form-button {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      color: #FFFFFF;
+      text-align: center;
+      background: #232323;
+      border-radius: 3px;
+      border: none;
+      height: 50px;
+      width: 100%;
+      margin-top: 10px;
+      cursor: pointer; }
+      .block2-3 .block3 .block3__form .block3__form-button:hover {
+        background: #5C5C5C; }
+      .block2-3 .block3 .block3__form .block3__form-button:focus {
+        background: #232323;
+        border: 2px dashed rgba(255, 255, 255, 0.5); }
+      .block2-3 .block3 .block3__form .block3__form-button:active {
+        background: #0E0E0E;
+        border: none; }
+
+@media (max-width: 1280px) {
+  .block2-3 {
+    flex-direction: column; }
+    .block2-3 .block2 {
+      margin-right: 0; }
+    .block2-3 .block3 {
+      justify-content: center;
+      grid-template-columns: repeat(2, 270px);
+      grid-template-rows: auto;
+      grid-template-areas: "title title" "card1 card2" "card3 card4";
+      grid-column-gap: 60px;
+      grid-row-gap: 40px; }
+      .block2-3 .block3 .block3__title1 {
+        grid-area: title;
+        padding-top: 68px; }
+      .block2-3 .block3 .block3__card1 {
+        grid-area: card1; }
+      .block2-3 .block3 .block3__card2 {
+        grid-area: card2; }
+      .block2-3 .block3 .block3__card3 {
+        grid-area: card3; }
+      .block2-3 .block3 .block3__card4 {
+        grid-area: card4; }
+      .block2-3 .block3 .block3__photo .block3__title2 {
+        padding: 25px 0px 15px; }
+      .block2-3 .block3 .block3__buttons .block3__title3 {
+        padding: 25px 0px 26px; }
+      .block2-3 .block3 .block3__form .block3__title4 {
+        padding: 8px 0px 11px; } }
+@media (max-width: 768px) {
+  .block2-3 .block2 {
+    display: grid;
+    grid-template-columns: 370px;
+    grid-row-gap: 280px;
+    padding: 45px 0px;
+    justify-content: center;
+    align-content: center; }
+    .block2-3 .block2 .block2__card .block2__card-text {
+      position: absolute;
+      width: 350px;
+      height: 324px;
+      background-color: white;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      margin: -120px 10px; }
+    .block2-3 .block2 .main .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block2 .block1__mark, .block2-3 .block2 .main .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1 .block1__card3 .block1__mark,
+    .main .block1 .block1__card3 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1 .block1__card4 .block1__mark,
+    .main .block1 .block1__card4 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1 .block1__card5 .block1__mark,
+    .main .block1 .block1__card5 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .block2 .block3__mark,
+    .block2-3 .block2 .block3 .block3__card2 .block3__mark,
+    .block2-3 .block3 .block3__card2 .block2 .block3__mark,
+    .block2-3 .block2 .block3 .block3__card3 .block3__mark,
+    .block2-3 .block3 .block3__card3 .block2 .block3__mark,
+    .block2-3 .block2 .block3 .block3__card4 .block3__mark,
+    .block2-3 .block3 .block3__card4 .block2 .block3__mark {
+      position: absolute;
+      font-size: 12px;
+      line-height: 16px;
+      background: #4A90E2;
+      color: white;
+      border-radius: 3px;
+      width: 62px;
+      height: 22px;
+      padding-top: 2.5px;
+      text-align: center;
+      left: 15px;
+      top: 30px; }
+    .block2-3 .block2 .block2__card .block2__card-text .block2__title {
+      position: absolute;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 28px;
+      color: #171717;
+      left: 15px;
+      right: 40px; }
+    .block2-3 .block2 .main .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .block2-3 .block2 .main .block1 .block1__card2 .block1__card2-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1 .block1__card3 .block1__card2-text .block1__date,
+    .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1 .block1__card4 .block1__card2-text .block1__date,
+    .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1 .block1__card5 .block1__card2-text .block1__date,
+    .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block2__card .block2__card-text .block2__date {
+      position: absolute;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 18px;
+      left: 15px;
+      bottom: 165px;
+      color: #666666; }
+    .block2-3 .block2 .main .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .block2-3 .block2 .main .block1 .block1__card2 .block1__card2-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1 .block1__card3 .block1__card2-text .block1__text,
+    .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1 .block1__card4 .block1__card2-text .block1__text,
+    .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1 .block1__card5 .block1__card2-text .block1__text,
+    .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block2__card .block2__card-text .block2__text {
+      position: absolute;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 24px;
+      left: 15px;
+      right: 40px;
+      color: #666666;
+      top: 170px; }
+    .block2-3 .block2 .block2__card .block2__image {
+      width: 100%;
+      height: 404px; }
+  .block2-3 .block3 {
+    grid-template-columns: 270px;
+    grid-template-areas: "title" "card1" "card2" "card3" "card4";
+    grid-column-gap: 65px;
+    grid-row-gap: 30px; }
+    .block2-3 .block3 .block3__title1 {
+      padding: 8px 0px; }
+    .block2-3 .block3 .block3__photo .block3__title2 {
+      padding: 2px 0px 15px; }
+    .block2-3 .block3 .block3__buttons .block3__title3 {
+      padding: 18px 0px 26px; }
+    .block2-3 .block3 .block3__form .block3__title4 {
+      padding: 18px 0px 11px; } }
 .footer {
   display: grid;
   grid-template-columns: repeat(3, 310px);
