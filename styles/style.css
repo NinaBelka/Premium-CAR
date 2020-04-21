@@ -748,7 +748,7 @@ body {
 
   .footer__nav {
     height: 110px;
-    grid-template-columns: 280px;
+    grid-template-columns: 310px;
     grid-template-rows: auto;
     grid-template-areas: "list" "title";
     justify-content: center; }
