@@ -521,7 +521,7 @@ body {
         padding: 25px 0px 26px; }
       .block2-3__container .block2-3 .block3 .block3__form .block3__title4 {
         padding: 8px 0px 11px; } }
-@media (max-width: 1280px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .block2-3__container .block2-3 .block2 .block2__buttons .block2__button {
     width: 30px;
     height: 30px; }
@@ -538,6 +538,13 @@ body {
       padding: 18px 0px 26px; }
     .block2-3__container .block2-3 .block3 .block3__form .block3__title4 {
       padding: 18px 0px 11px; } }
+@media (max-width: 568px) {
+  .block2-3__container .block2-3 .block2 .block2__card {
+    margin: -50px auto 30px; }
+    .block2-3__container .block2-3 .block2 .block2__card .block2__title {
+      font-size: 16px; }
+    .block2-3__container .block2-3 .block2 .block2__card .block2__date {
+      margin: 10px 20px; } }
 .footer {
   display: grid;
   grid-template-columns: repeat(3, 310px);
