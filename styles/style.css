@@ -10,55 +10,59 @@ body {
   overflow-x: hidden; }
 
 .header {
-  display: flex;
   width: 100%;
   height: 90px;
-  justify-content: space-between;
   background-color: #000000;
-  color: #FFFFFF;
-  padding: 0px 150px; }
-  .header .header__titles {
+  color: #FFFFFF; }
+  .header .header__container {
+    width: 80%;
     display: flex;
-    padding-top: 35px; }
-    .header .header__titles .header__title1 {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      line-height: 17px;
-      margin-right: 10px; }
-    .header .header__titles .header__title2 {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      line-height: 17px;
-      background: #4A90E2;
-      border-radius: 3px;
-      width: 39px;
-      height: 23px;
-      padding-top: 2.5px;
-      text-align: center; }
-  .header .header__nav-list {
-    display: flex;
-    width: 450px;
     justify-content: space-between;
-    list-style-type: none;
-    padding-top: 35px; }
-    .header .header__nav-list .header__nav-item-link {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      line-height: 18px;
-      cursor: pointer; }
-      .header .header__nav-list .header__nav-item-link:hover {
-        border-bottom: 2px solid #FFFFFF; }
-      .header .header__nav-list .header__nav-item-link:focus {
-        width: 42px;
-        height: 18px;
-        color: #000000;
-        background: rgba(255, 255, 255, 0.8); }
-      .header .header__nav-list .header__nav-item-link:active {
-        font-weight: bold;
+    align-items: center;
+    margin: auto; }
+    .header .header__container .header__titles {
+      display: flex;
+      padding-top: 35px; }
+      .header .header__container .header__titles .header__title1 {
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        line-height: 17px;
+        margin-right: 10px; }
+      .header .header__container .header__titles .header__title2 {
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        line-height: 17px;
+        background: #4A90E2;
+        border-radius: 3px;
+        width: 39px;
+        height: 23px;
+        padding-top: 2.5px;
+        text-align: center; }
+    .header .header__container .header__nav-list {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      padding-top: 35px; }
+      .header .header__container .header__nav-list .header__nav-item:not(:last-child) {
+        margin-right: 30px; }
+      .header .header__container .header__nav-list .header__nav-item-link {
         color: white;
-        border-bottom: 2px solid #FFFFFF;
-        background: #000000; }
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 18px;
+        cursor: pointer; }
+        .header .header__container .header__nav-list .header__nav-item-link:hover {
+          border-bottom: 1px solid #FFFFFF; }
+        .header .header__container .header__nav-list .header__nav-item-link:focus {
+          width: 42px;
+          height: 18px;
+          color: #000000;
+          background: rgba(255, 255, 255, 0.8); }
+        .header .header__container .header__nav-list .header__nav-item-link:active {
+          font-weight: bold;
+          color: white;
+          border-bottom: 2px solid #FFFFFF;
+          background: #000000; }
   .header .header__menu-icon {
     display: none;
     top: 0px;
@@ -66,185 +70,158 @@ body {
     font-size: 2rem;
     color: white;
     line-height: 1;
+    padding-top: 20px;
     cursor: pointer; }
   .header .header__close-icon {
     display: none;
     text-align: right;
-    padding: 1rem 3rem;
+    padding: 5.5rem;
     font-size: 1.3rem;
     cursor: pointer;
     margin-left: auto; }
 
-@media (max-width: 1280px) {
-  .header {
-    padding: 0px 100px; }
-    .header .header__nav-list {
-      width: 350px; } }
 @media (max-width: 768px) {
-  .header {
-    padding: 0px 80px; }
-    .header .header__menu-icon {
-      margin: auto 1rem auto auto;
+  .header .header__container .header__menu-icon {
+    display: block; }
+  .header .header__container .header__nav-list {
+    position: absolute;
+    right: 0;
+    background-color: #000000;
+    flex-direction: column;
+    width: 220px;
+    display: none;
+    z-index: 2; }
+    .header .header__container .header__nav-list .header__close-icon {
       display: block; }
-    .header .header__nav-list {
-      position: absolute;
-      right: 0;
-      background-color: #000000;
-      flex-direction: column;
-      width: 220px;
-      display: none;
-      z-index: 2; }
-      .header .header__nav-list .header__close-icon {
-        display: block; }
-    .header .header__nav-list--active {
-      display: block; }
-    .header .header__nav-item {
+  .header .header__container .header__nav-list--active {
+    display: block; }
+    .header .header__container .header__nav-list--active .header__nav-item {
       width: 100%;
       height: 40px;
       border: 1px solid rgba(0, 0, 0, 0.4);
       box-shadow: 0 3px 8px 3px rgba(238, 233, 233, 0.4); }
-      .header .header__nav-item .header__nav-item-link {
+      .header .header__container .header__nav-list--active .header__nav-item .header__nav-item-link {
         font-size: 15px;
         line-height: 40px;
         margin-left: 20px; } }
-.main {
-  max-width: 1170px;
+.main .block1__container {
+  width: 90%;
   margin: auto; }
-  .main .block1 {
-    width: 100%;
+  .main .block1__container .block1 {
     display: grid;
     color: white;
     grid-template-columns: repeat(3, 370px);
-    grid-template-rows: auto;
+    grid-template-rows: repeat(2, 250px);
     grid-template-areas: "card1 card2 card3" "card1 card4 card5";
-    grid-column-gap: 10px;
+    grid-column-gap: 30px;
     grid-row-gap: 30px;
     padding: 30px 0px;
     justify-content: center;
     align-content: center; }
-    .main .block1 .block1__card1 .block1__mark, .main .block1 .block1__card2 .block1__mark,
-    .main .block1 .block1__card3 .block1__mark,
-    .main .block1 .block1__card4 .block1__mark,
-    .main .block1 .block1__card5 .block1__mark, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block2__card .block2__card-text .main .block1 .block2__mark, .main .block1 .block2-3 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .main .block1 .block3__mark,
-    .main .block1 .block2-3 .block3 .block3__card2 .block3__mark,
-    .block2-3 .block3 .block3__card2 .main .block1 .block3__mark,
-    .main .block1 .block2-3 .block3 .block3__card3 .block3__mark,
-    .block2-3 .block3 .block3__card3 .main .block1 .block3__mark,
-    .main .block1 .block2-3 .block3 .block3__card4 .block3__mark,
-    .block2-3 .block3 .block3__card4 .main .block1 .block3__mark {
-      position: absolute;
-      font-size: 14px;
-      line-height: 17px;
-      background: #4A90E2;
-      color: white;
-      border-radius: 3px;
-      width: 62px;
-      height: 22px;
-      padding-top: 2.5px;
-      text-align: center;
-      left: 22px;
-      top: 30px; }
-    .main .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block1__date,
-    .main .block1 .block1__card3 .block1__card2-text .block1__date,
-    .main .block1 .block1__card4 .block1__card2-text .block1__date,
-    .main .block1 .block1__card5 .block1__card2-text .block1__date, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__date, .block2-3 .block2 .block2__card .block2__card-text .main .block1 .block2__date {
-      position: absolute;
-      font-size: 14px;
-      line-height: 18px;
-      left: 22px;
-      bottom: 90px; }
-    .main .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block1__text,
-    .main .block1 .block1__card3 .block1__card2-text .block1__text,
-    .main .block1 .block1__card4 .block1__card2-text .block1__text,
-    .main .block1 .block1__card5 .block1__card2-text .block1__text, .main .block1 .block2-3 .block2 .block2__card .block2__card-text .block2__text, .block2-3 .block2 .block2__card .block2__card-text .main .block1 .block2__text {
-      position: absolute;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 30px;
-      left: 22px;
-      bottom: 22px; }
-    .main .block1 .block1__card1 {
-      grid-area: card1;
-      position: relative;
-      cursor: pointer; }
-      .main .block1 .block1__card1 .block1__card1-text {
-        position: absolute;
-        height: 560px;
-        width: 100%;
-        border-radius: 5px;
-        top: 0px;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%); }
-        .main .block1 .block1__card1 .block1__card1-text .block1__date {
-          bottom: 100px; }
-        .main .block1 .block1__card1 .block1__card1-text .block1__text {
-          font-size: 26px;
-          line-height: 36px; }
-      .main .block1 .block1__card1:hover .block1__card1-text {
-        position: absolute;
-        height: 560px;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 5px;
-        top: 0px;
-        transition-duration: 0.3s; }
-      .main .block1 .block1__card1:hover .block1__text {
-        text-decoration-line: underline; }
-    .main .block1 .block1__card2 {
-      grid-area: card2; }
-    .main .block1 .block1__card3 {
-      grid-area: card3; }
-    .main .block1 .block1__card4 {
-      grid-area: card4; }
-    .main .block1 .block1__card5 {
-      grid-area: card5; }
-    .main .block1 .block1__card2,
-    .main .block1 .block1__card3,
-    .main .block1 .block1__card4,
-    .main .block1 .block1__card5 {
-      position: relative;
-      cursor: pointer; }
-      .main .block1 .block1__card2 .block1__card2-text,
-      .main .block1 .block1__card3 .block1__card2-text,
-      .main .block1 .block1__card4 .block1__card2-text,
-      .main .block1 .block1__card5 .block1__card2-text {
-        position: absolute;
-        height: 265px;
-        width: 100%;
-        border-radius: 5px;
-        top: 0px;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%); }
-      .main .block1 .block1__card2:hover .block1__card2-text,
-      .main .block1 .block1__card3:hover .block1__card2-text,
-      .main .block1 .block1__card4:hover .block1__card2-text,
-      .main .block1 .block1__card5:hover .block1__card2-text {
-        position: absolute;
-        height: 265px;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 5px;
-        top: 0px;
-        transition-duration: 0.3s; }
-      .main .block1 .block1__card2:hover .block1__text,
-      .main .block1 .block1__card3:hover .block1__text,
-      .main .block1 .block1__card4:hover .block1__text,
-      .main .block1 .block1__card5:hover .block1__text {
-        text-decoration-line: underline; }
+  .main .block1__container .block1__card1 .block1__mark,
+  .main .block1__container .block1__card2 .block1__mark,
+  .main .block1__container .block1__card3 .block1__mark,
+  .main .block1__container .block1__card4 .block1__mark,
+  .main .block1__container .block1__card5 .block1__mark, .main .block1__container .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block2__card .block2__card-text .main .block1__container .block2__mark, .main .block1__container .block2-3 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .main .block1__container .block3__mark,
+  .main .block1__container .block2-3 .block3 .block3__card2 .block3__mark,
+  .block2-3 .block3 .block3__card2 .main .block1__container .block3__mark,
+  .main .block1__container .block2-3 .block3 .block3__card3 .block3__mark,
+  .block2-3 .block3 .block3__card3 .main .block1__container .block3__mark,
+  .main .block1__container .block2-3 .block3 .block3__card4 .block3__mark,
+  .block2-3 .block3 .block3__card4 .main .block1__container .block3__mark {
+    font-size: 14px;
+    line-height: 17px;
+    background: #4A90E2;
+    border-radius: 3px;
+    width: 62px;
+    height: 22px;
+    padding-top: 2.5px;
+    text-align: center;
+    margin: 20px 0px 0px 20px; }
+  .main .block1__container .block1__card1 .block1__card-text .block1__date,
+  .main .block1__container .block1__card2 .block1__card-text .block1__date,
+  .main .block1__container .block1__card3 .block1__card-text .block1__date,
+  .main .block1__container .block1__card4 .block1__card-text .block1__date,
+  .main .block1__container .block1__card5 .block1__card-text .block1__date, .main .block1__container .block2-3 .block2 .block2__card .block2__card-text .block2__date, .block2-3 .block2 .block2__card .block2__card-text .main .block1__container .block2__date {
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 20px; }
+  .main .block1__container .block1__card1 .block1__card-text .block1__text,
+  .main .block1__container .block1__card2 .block1__card-text .block1__text,
+  .main .block1__container .block1__card3 .block1__card-text .block1__text,
+  .main .block1__container .block1__card4 .block1__card-text .block1__text,
+  .main .block1__container .block1__card5 .block1__card-text .block1__text, .main .block1__container .block2-3 .block2 .block2__card .block2__card-text .block2__text, .block2-3 .block2 .block2__card .block2__card-text .main .block1__container .block2__text {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 20px; }
+  .main .block1__container .block1__card1 {
+    grid-area: card1;
+    background-image: url("../images/image_1.png"); }
+  .main .block1__container .block1__card2 {
+    grid-area: card2;
+    background-image: url("../images/image_2.png"); }
+  .main .block1__container .block1__card3 {
+    grid-area: card3;
+    background-image: url("../images/image_3.png"); }
+  .main .block1__container .block1__card4 {
+    grid-area: card4;
+    background-image: url("../images/image_4.png"); }
+  .main .block1__container .block1__card5 {
+    grid-area: card5;
+    background-image: url("../images/image_5.png"); }
+  .main .block1__container .block1__card1,
+  .main .block1__container .block1__card2,
+  .main .block1__container .block1__card3,
+  .main .block1__container .block1__card4,
+  .main .block1__container .block1__card5 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 5px;
+    background-color: linear-gradient(180deg, rgba(0, 0, 0, 7.5e-05) 0%, rgba(0, 0, 0, 0.75) 82.82%);
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer; }
+    .main .block1__container .block1__card1 .block1__card-text,
+    .main .block1__container .block1__card2 .block1__card-text,
+    .main .block1__container .block1__card3 .block1__card-text,
+    .main .block1__container .block1__card4 .block1__card-text,
+    .main .block1__container .block1__card5 .block1__card-text {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-radius: 5px; }
+    .main .block1__container .block1__card1:hover .block1__card-text,
+    .main .block1__container .block1__card2:hover .block1__card-text,
+    .main .block1__container .block1__card3:hover .block1__card-text,
+    .main .block1__container .block1__card4:hover .block1__card-text,
+    .main .block1__container .block1__card5:hover .block1__card-text {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+      top: 0px;
+      transition-duration: 0.3s; }
+    .main .block1__container .block1__card1:hover .block1__text,
+    .main .block1__container .block1__card2:hover .block1__text,
+    .main .block1__container .block1__card3:hover .block1__text,
+    .main .block1__container .block1__card4:hover .block1__text,
+    .main .block1__container .block1__card5:hover .block1__text {
+      text-decoration-line: underline; }
 
 @media (max-width: 1280px) {
-  .main {
-    max-width: 760px;
-    margin: auto; }
-    .main .block1 {
-      grid-template-columns: repeat(2, 370px);
-      grid-template-areas: "card1 card2" "card1 card4" "card3 card5";
-      justify-content: center; } }
+  .main .block1__container .block1 {
+    grid-template-columns: repeat(2, 370px);
+    grid-template-rows: repeat(3, 250px);
+    grid-template-areas: "card1 card2" "card1 card4" "card3 card5";
+    justify-content: center; } }
 @media (max-width: 768px) {
-  .main {
-    max-width: 370px;
-    margin: auto; }
-    .main .block1 {
-      grid-template-columns: repeat(1, 370px);
-      grid-template-areas: "card1" "card1" "card2" "card4" "card3" "card5"; } }
+  .main .block1__container .block1 {
+    grid-template-columns: repeat(1, 370px);
+    grid-template-rows: repeat(6, 250px);
+    grid-template-areas: "card1" "card1" "card2" "card4" "card3" "card5"; } }
+@media (max-width: 568px) {
+  .main .block1__container .block1 {
+    grid-template-columns: repeat(1, 300px); } }
 .block2-3 {
   display: flex;
   justify-content: center;
@@ -264,13 +241,15 @@ body {
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
       border-radius: 5px;
       margin: -120px 30px 0px; }
-    .block2-3 .block2 .main .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block2 .block1__mark, .block2-3 .block2 .main .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block2 .block1__mark,
-    .block2-3 .block2 .main .block1 .block1__card3 .block1__mark,
-    .main .block1 .block1__card3 .block2-3 .block2 .block1__mark,
-    .block2-3 .block2 .main .block1 .block1__card4 .block1__mark,
-    .main .block1 .block1__card4 .block2-3 .block2 .block1__mark,
-    .block2-3 .block2 .main .block1 .block1__card5 .block1__mark,
-    .main .block1 .block1__card5 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .block2 .block3__mark,
+    .block2-3 .block2 .main .block1__container .block1__card1 .block1__mark, .main .block1__container .block1__card1 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1__container .block1__card2 .block1__mark,
+    .main .block1__container .block1__card2 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1__container .block1__card3 .block1__mark,
+    .main .block1__container .block1__card3 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1__container .block1__card4 .block1__mark,
+    .main .block1__container .block1__card4 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1__container .block1__card5 .block1__mark,
+    .main .block1__container .block1__card5 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .block2 .block3__mark,
     .block2-3 .block2 .block3 .block3__card2 .block3__mark,
     .block2-3 .block3 .block3__card2 .block2 .block3__mark,
     .block2-3 .block2 .block3 .block3__card3 .block3__mark,
@@ -297,13 +276,15 @@ body {
       color: #171717;
       left: 30px;
       top: 72px; }
-    .block2-3 .block2 .main .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .block2-3 .block2 .main .block1 .block1__card2 .block1__card2-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date,
-    .block2-3 .block2 .main .block1 .block1__card3 .block1__card2-text .block1__date,
-    .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
-    .block2-3 .block2 .main .block1 .block1__card4 .block1__card2-text .block1__date,
-    .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date,
-    .block2-3 .block2 .main .block1 .block1__card5 .block1__card2-text .block1__date,
-    .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block2__card .block2__card-text .block2__date {
+    .block2-3 .block2 .main .block1__container .block1__card1 .block1__card-text .block1__date, .main .block1__container .block1__card1 .block1__card-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1__container .block1__card2 .block1__card-text .block1__date,
+    .main .block1__container .block1__card2 .block1__card-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1__container .block1__card3 .block1__card-text .block1__date,
+    .main .block1__container .block1__card3 .block1__card-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1__container .block1__card4 .block1__card-text .block1__date,
+    .main .block1__container .block1__card4 .block1__card-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1__container .block1__card5 .block1__card-text .block1__date,
+    .main .block1__container .block1__card5 .block1__card-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block2__card .block2__card-text .block2__date {
       position: absolute;
       font-style: italic;
       font-size: 14px;
@@ -311,13 +292,15 @@ body {
       left: 30px;
       bottom: 115px;
       color: #666666; }
-    .block2-3 .block2 .main .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .block2-3 .block2 .main .block1 .block1__card2 .block1__card2-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text,
-    .block2-3 .block2 .main .block1 .block1__card3 .block1__card2-text .block1__text,
-    .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
-    .block2-3 .block2 .main .block1 .block1__card4 .block1__card2-text .block1__text,
-    .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text,
-    .block2-3 .block2 .main .block1 .block1__card5 .block1__card2-text .block1__text,
-    .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block2__card .block2__card-text .block2__text {
+    .block2-3 .block2 .main .block1__container .block1__card1 .block1__card-text .block1__text, .main .block1__container .block1__card1 .block1__card-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1__container .block1__card2 .block1__card-text .block1__text,
+    .main .block1__container .block1__card2 .block1__card-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1__container .block1__card3 .block1__card-text .block1__text,
+    .main .block1__container .block1__card3 .block1__card-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1__container .block1__card4 .block1__card-text .block1__text,
+    .main .block1__container .block1__card4 .block1__card-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1__container .block1__card5 .block1__card-text .block1__text,
+    .main .block1__container .block1__card5 .block1__card-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block2__card .block2__card-text .block2__text {
       position: absolute;
       font-weight: bold;
       font-size: 14px;
@@ -355,13 +338,15 @@ body {
     grid-template-rows: 30px 320px 320px 320px 320px 530px 350px 350px;
     grid-template-areas: "block3__title1" "block3__card1" "block3__card2" "block3__card3" "block3__card4" "block3__photo" "block3__buttons" "block3__form";
     grid-row-gap: 25px; }
-    .block2-3 .block3 .main .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block3 .block1__mark, .block2-3 .block3 .main .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block3 .block1__mark,
-    .block2-3 .block3 .main .block1 .block1__card3 .block1__mark,
-    .main .block1 .block1__card3 .block2-3 .block3 .block1__mark,
-    .block2-3 .block3 .main .block1 .block1__card4 .block1__mark,
-    .main .block1 .block1__card4 .block2-3 .block3 .block1__mark,
-    .block2-3 .block3 .main .block1 .block1__card5 .block1__mark,
-    .main .block1 .block1__card5 .block2-3 .block3 .block1__mark, .block2-3 .block3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block2__card .block2__card-text .block3 .block2__mark, .block2-3 .block3 .block3__card1 .block3__mark,
+    .block2-3 .block3 .main .block1__container .block1__card1 .block1__mark, .main .block1__container .block1__card1 .block2-3 .block3 .block1__mark,
+    .block2-3 .block3 .main .block1__container .block1__card2 .block1__mark,
+    .main .block1__container .block1__card2 .block2-3 .block3 .block1__mark,
+    .block2-3 .block3 .main .block1__container .block1__card3 .block1__mark,
+    .main .block1__container .block1__card3 .block2-3 .block3 .block1__mark,
+    .block2-3 .block3 .main .block1__container .block1__card4 .block1__mark,
+    .main .block1__container .block1__card4 .block2-3 .block3 .block1__mark,
+    .block2-3 .block3 .main .block1__container .block1__card5 .block1__mark,
+    .main .block1__container .block1__card5 .block2-3 .block3 .block1__mark, .block2-3 .block3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block2__card .block2__card-text .block3 .block2__mark, .block2-3 .block3 .block3__card1 .block3__mark,
     .block2-3 .block3 .block3__card2 .block3__mark,
     .block2-3 .block3 .block3__card3 .block3__mark,
     .block2-3 .block3 .block3__card4 .block3__mark {
@@ -572,13 +557,15 @@ body {
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
       border-radius: 5px;
       margin: -120px 10px; }
-    .block2-3 .block2 .main .block1 .block1__card1 .block1__mark, .main .block1 .block1__card1 .block2-3 .block2 .block1__mark, .block2-3 .block2 .main .block1 .block1__card2 .block1__mark, .main .block1 .block1__card2 .block2-3 .block2 .block1__mark,
-    .block2-3 .block2 .main .block1 .block1__card3 .block1__mark,
-    .main .block1 .block1__card3 .block2-3 .block2 .block1__mark,
-    .block2-3 .block2 .main .block1 .block1__card4 .block1__mark,
-    .main .block1 .block1__card4 .block2-3 .block2 .block1__mark,
-    .block2-3 .block2 .main .block1 .block1__card5 .block1__mark,
-    .main .block1 .block1__card5 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .block2 .block3__mark,
+    .block2-3 .block2 .main .block1__container .block1__card1 .block1__mark, .main .block1__container .block1__card1 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1__container .block1__card2 .block1__mark,
+    .main .block1__container .block1__card2 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1__container .block1__card3 .block1__mark,
+    .main .block1__container .block1__card3 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1__container .block1__card4 .block1__mark,
+    .main .block1__container .block1__card4 .block2-3 .block2 .block1__mark,
+    .block2-3 .block2 .main .block1__container .block1__card5 .block1__mark,
+    .main .block1__container .block1__card5 .block2-3 .block2 .block1__mark, .block2-3 .block2 .block2__card .block2__card-text .block2__mark, .block2-3 .block2 .block3 .block3__card1 .block3__mark, .block2-3 .block3 .block3__card1 .block2 .block3__mark,
     .block2-3 .block2 .block3 .block3__card2 .block3__mark,
     .block2-3 .block3 .block3__card2 .block2 .block3__mark,
     .block2-3 .block2 .block3 .block3__card3 .block3__mark,
@@ -605,13 +592,15 @@ body {
       color: #171717;
       left: 15px;
       right: 40px; }
-    .block2-3 .block2 .main .block1 .block1__card1 .block1__card1-text .block1__date, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__date, .block2-3 .block2 .main .block1 .block1__card2 .block1__card2-text .block1__date, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__date,
-    .block2-3 .block2 .main .block1 .block1__card3 .block1__card2-text .block1__date,
-    .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__date,
-    .block2-3 .block2 .main .block1 .block1__card4 .block1__card2-text .block1__date,
-    .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__date,
-    .block2-3 .block2 .main .block1 .block1__card5 .block1__card2-text .block1__date,
-    .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block2__card .block2__card-text .block2__date {
+    .block2-3 .block2 .main .block1__container .block1__card1 .block1__card-text .block1__date, .main .block1__container .block1__card1 .block1__card-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1__container .block1__card2 .block1__card-text .block1__date,
+    .main .block1__container .block1__card2 .block1__card-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1__container .block1__card3 .block1__card-text .block1__date,
+    .main .block1__container .block1__card3 .block1__card-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1__container .block1__card4 .block1__card-text .block1__date,
+    .main .block1__container .block1__card4 .block1__card-text .block2-3 .block2 .block1__date,
+    .block2-3 .block2 .main .block1__container .block1__card5 .block1__card-text .block1__date,
+    .main .block1__container .block1__card5 .block1__card-text .block2-3 .block2 .block1__date, .block2-3 .block2 .block2__card .block2__card-text .block2__date {
       position: absolute;
       font-style: italic;
       font-size: 14px;
@@ -619,13 +608,15 @@ body {
       left: 15px;
       bottom: 165px;
       color: #666666; }
-    .block2-3 .block2 .main .block1 .block1__card1 .block1__card1-text .block1__text, .main .block1 .block1__card1 .block1__card1-text .block2-3 .block2 .block1__text, .block2-3 .block2 .main .block1 .block1__card2 .block1__card2-text .block1__text, .main .block1 .block1__card2 .block1__card2-text .block2-3 .block2 .block1__text,
-    .block2-3 .block2 .main .block1 .block1__card3 .block1__card2-text .block1__text,
-    .main .block1 .block1__card3 .block1__card2-text .block2-3 .block2 .block1__text,
-    .block2-3 .block2 .main .block1 .block1__card4 .block1__card2-text .block1__text,
-    .main .block1 .block1__card4 .block1__card2-text .block2-3 .block2 .block1__text,
-    .block2-3 .block2 .main .block1 .block1__card5 .block1__card2-text .block1__text,
-    .main .block1 .block1__card5 .block1__card2-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block2__card .block2__card-text .block2__text {
+    .block2-3 .block2 .main .block1__container .block1__card1 .block1__card-text .block1__text, .main .block1__container .block1__card1 .block1__card-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1__container .block1__card2 .block1__card-text .block1__text,
+    .main .block1__container .block1__card2 .block1__card-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1__container .block1__card3 .block1__card-text .block1__text,
+    .main .block1__container .block1__card3 .block1__card-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1__container .block1__card4 .block1__card-text .block1__text,
+    .main .block1__container .block1__card4 .block1__card-text .block2-3 .block2 .block1__text,
+    .block2-3 .block2 .main .block1__container .block1__card5 .block1__card-text .block1__text,
+    .main .block1__container .block1__card5 .block1__card-text .block2-3 .block2 .block1__text, .block2-3 .block2 .block2__card .block2__card-text .block2__text {
       position: absolute;
       font-weight: bold;
       font-size: 14px;
@@ -636,7 +627,8 @@ body {
       top: 170px; }
     .block2-3 .block2 .block2__card .block2__image {
       width: 100%;
-      height: 404px; }
+      height: 404px;
+      object-fit: cover; }
   .block2-3 .block3 {
     grid-template-columns: 270px;
     grid-template-areas: "title" "card1" "card2" "card3" "card4";
@@ -734,23 +726,27 @@ body {
       grid-area: image3; }
     .footer .footer__block2 .footer__block2c {
       grid-area: text3; }
-    .footer .footer__block2 .footer__block2a, .footer .footer__block2 .footer__block2b,
+    .footer .footer__block2 .footer__block2a,
+    .footer .footer__block2 .footer__block2b,
     .footer .footer__block2 .footer__block2c {
       align-self: center;
       cursor: pointer; }
-      .footer .footer__block2 .footer__block2a .footer__block2-text, .footer .footer__block2 .footer__block2b .footer__block2-text,
+      .footer .footer__block2 .footer__block2a .footer__block2-text,
+      .footer .footer__block2 .footer__block2b .footer__block2-text,
       .footer .footer__block2 .footer__block2c .footer__block2-text {
         font-weight: bold;
         font-size: 15px;
         line-height: 26px; }
-      .footer .footer__block2 .footer__block2a .footer__block2-date, .footer .footer__block2 .footer__block2b .footer__block2-date,
+      .footer .footer__block2 .footer__block2a .footer__block2-date,
+      .footer .footer__block2 .footer__block2b .footer__block2-date,
       .footer .footer__block2 .footer__block2c .footer__block2-date {
         font-style: italic;
         font-weight: normal;
         font-size: 14px;
         line-height: 14px;
         color: #CECECE; }
-      .footer .footer__block2 .footer__block2a:hover, .footer .footer__block2 .footer__block2b:hover,
+      .footer .footer__block2 .footer__block2a:hover,
+      .footer .footer__block2 .footer__block2b:hover,
       .footer .footer__block2 .footer__block2c:hover {
         text-decoration-line: underline; }
   .footer .footer__block3 {
